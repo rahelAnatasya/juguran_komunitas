@@ -33,6 +33,7 @@
                             </div>
                         </form>
                     </div>
+                    <span>Sudah Memiliki Akun? <a href="{{ route('login') }}">Login</a></span>
                 </div>
             </div>
         </div>

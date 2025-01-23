@@ -1,14 +1,22 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Event\EventController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Event\EventController;
 use App\Http\Controllers\Auth\RegisterController;
 
 
 
-// AUTH
+// =============== Auth ===============
+
+// ===== Register =====
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/store-register', [RegisterController::class, 'store'])->name('store-register');
+
+// ===== Login =====
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
 
 
 
