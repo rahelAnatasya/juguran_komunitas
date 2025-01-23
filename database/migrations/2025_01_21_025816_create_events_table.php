@@ -16,12 +16,10 @@ return new class extends Migration
             $table->text('title');
             $table->date('from_date');
             $table->date('to_date')->nullable();
-            $table->text('location');
+            $table->string('name_location');
+            $table->text('link_location');
             $table->text('description');
-            $table->text('image_one')->nullable();
-            $table->text('image_two')->nullable();
-            $table->text('image_three')->nullable();
-            $table->text('image_four')->nullable();
+            $table->string('coupon_code')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->enum('type', ['online', 'offline'])->default('offline');
             $table->enum('mode', ['paid', 'free'])->default('free');
