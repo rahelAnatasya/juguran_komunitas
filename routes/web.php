@@ -5,7 +5,7 @@ use App\Http\Controllers\Event\EventController;
 use Illuminate\Support\Facades\Route;
 
 
-// =============== Menu =============== 
+// =============== Menu ===============
 
 // ===== Dashboard =====
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
