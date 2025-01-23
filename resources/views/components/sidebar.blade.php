@@ -2,13 +2,13 @@
     <!-- Sidebar Logo -->
     <div class="logo-box">
         <a href="index.php" class="logo-dark">
-            <img src="{{ asset('assets/images/logo/logo-hs.png') }}" class="logo-sm" alt="logo sm"/>
-            <span class="logo-lg fw-bold align-middle" style="color: #0d47a1;">Hugo Studio</span>
+            <img src="{{ url('assets/images/logo/icon-juguran-komunitas.png') }}" class="logo-sm" alt="logo sm"/>
+            <span class="logo-lg fw-bold align-middle" style="color: #0d47a1;">Juguran Komunitas</span>
         </a>
 
         <a href="index.php" class="logo-light">
-            <img src="{{ asset('assets/images/logo/logo-hs.png') }}" class="logo-sm" alt="logo sm"/>
-            <span class="logo-lg fw-bold align-middle" style="color: #0d47a1;">Hugo Studio</span>
+            <img src="{{ url('assets/images/logo/icon-juguran-komunitas.png') }}" class="logo-sm" alt="logo sm"/>
+            <span class="logo-lg fw-bold align-middle" style="color: #0d47a1;">Juguran Komunitas</span>
         </a>
     </div>
 
