@@ -22,20 +22,15 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone' => ['nullable'],
-            'institution' => ['nullable'],
         ];
     }
 
     public function messages(): array
     {
         return [
-            'avatar.mimes' => 'Gambar harus bertipe: jpeg, png, jpg.',
-            'avatar.max' => 'Gambar jangan lebih dari 2 MB.',
             'name.max' => 'Nama maksimal 255 karakter.',
             'name.required' => 'Nama harus diisi.',
             'email.required' => 'Email harus diisi.',
