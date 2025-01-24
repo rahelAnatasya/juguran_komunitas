@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        return view('menu.event.index', [
+        return view('dashboard.menu.event.index', [
             'title' => 'Semua Acara'
         ]);
     }
