@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Event\EventController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Event\YourEventController;
 use App\Http\Controllers\Homepage\HomepageController;
 
 // =============== Auth ===============
@@ -26,4 +27,5 @@ Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // ===== Event =====
 Route::get('/event', [EventController::class, 'index'])->name('event');
-
+// ===== Your Event =====
+Route::get('/your-event', [YourEventController::class, 'index'])->name('your-event');
