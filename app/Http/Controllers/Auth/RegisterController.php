@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
@@ -20,7 +21,7 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request){
         $data = $request->validated();
         $user = User::create($data);
-
-        return redirect('/')->with('success', 'Registrasi Berhasil');
+        Auth::login($user);
+        return redirect()->route('dashboard')->with('success', 'Registrasi Berhasil');
     }
 }

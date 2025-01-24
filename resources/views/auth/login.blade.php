@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <form method="POST" action="">
+                        <form method="POST" action="{{ route('store-login') }}">
                             @csrf
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Email</label>
@@ -21,10 +21,10 @@
                             </div>
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <input type="text" name="password" id="">
+                                <input type="password" name="password" id="">
                             </div>
+                            <button type="submit">Login</button>
                         </form>
-
                         <span>Sudah Memiliki Akun? <a href="{{ route('register') }}">Register</a></span>
                     </div>
                 </div>
