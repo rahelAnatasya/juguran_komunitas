@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">Register</div>
                     <div class="card-body">
-                        <form method="POST" action="">
+                        <form method="POST" action="{{ route('store-register') }}">
                             @csrf
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
@@ -31,6 +31,7 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Konfirmasi Password</label>
                                 <input type="text" name="password_confirmation" id="">
                             </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
                         </form>
                     </div>
                     <span>Sudah Memiliki Akun? <a href="{{ route('login') }}">Login</a></span>
