@@ -42,43 +42,29 @@
             <li class="menu-title">menu</li>
 
             <li class="nav-item">
-                <a class="nav-link menu-arrow" href="#sidebarPresensi" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPresensi">
-                    <span class="nav-icon">
-                        <i class='bx bx-folder-open'></i>
-                    </span>
-                    <span class="nav-text"> Presensi </span>
-                </a>
-                <div class="collapse" id="sidebarPresensi">
-                    <ul class="nav sub-navbar-nav">
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="" >Absensi</a>
-                        </li>
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="" >Jadwal</a>
-                        </li>
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="" >Pengumuman</a>
-                        </li>
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="" >Izin/Cuti</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-arrow" href="#sdm" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sdm">
+                <a class="nav-link" href="apps-chat.php">
                     <span class="nav-icon">
                         <i class='bx bxs-user'></i>
                     </span>
-                    <span class="nav-text"> SDM </span>
+                    <span class="nav-text"> Semua Acara </span>
                 </a>
-                <div class="collapse" id="sdm">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link menu-arrow" href="#yourEvent" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="yourEvent">
+                    <span class="nav-icon">
+                        <iconify-icon
+                            icon="iconamoon:home-duotone"
+                        ></iconify-icon>
+                    </span>
+                    <span class="nav-text">Acara </span>
+                </a>
+                <div class="collapse" id="yourEvent">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="" >Pegawai</a>
+                            <a class="sub-nav-link" href="{{ route('your-event') }}">Daftar Acara</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="" >Divisi</a>
+                            <a class="sub-nav-link" href="{{ route('your-event') }}">Acara Diikuti</a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +74,7 @@
                     <span class="nav-icon">
                         <i class="bx bx-log-out fs-18 align-middle me-1"></i>
                     </span>
-                    <span class="nav-text"> Logout </span>
+                    <span class="nav-text"> Keluar </span>
                 </a>
             </li>
         </ul>
