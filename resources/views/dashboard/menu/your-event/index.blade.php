@@ -1,6 +1,15 @@
 @extends('components.layout')
 
 @section('content')
+<style>
+    #imageCropPreview {
+        max-width: 100%;
+        display: none;
+        border: 1px solid #ddd;
+        margin-top: 10px;
+    }
+</style>
+
 <div class="row">
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -95,30 +104,42 @@
                         </div>
                         <div class="mb-3">
                             <label for="eventDate" class="form-label">Tanggal Acara</label>
-                            <input type="date" id="eventDate" name="eventDate" class="form-control" placeholder="Masukkan tanggal acara">
+                            <input type="date" id="eventDate" name="eventDate" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="nameLocation" class="form-label">Alamat</label>
                             <input type="text" id="nameLocation" name="nameLocation" class="form-control" placeholder="Masukkan alamat acara">
                         </div>
-                
+
                         <div class="col-12 col-md-6">
                             <div class="mb-3">
                                 <label for="coverEvent" class="form-label">Cover Acara</label>
                                 <input name="file" id="coverEvent" type="file" class="form-control">
                                 <small class="text-muted">Unggah gambar untuk cover acara (format: jpg, png)</small>
                             </div>
+
                         </div>
                         <div class="col-12 col-md-6">
-                            <!-- Tempat Preview Gambar -->
-                            <div class="text-center">
-                                <img id="imageCropPreview" src="#" alt="Preview" style="max-width: 100%; display: none;">
+                            <!-- Area Crop (Awalnya disembunyikan) -->
+                            <div id="cropContainer" class="text-center" style="display: none;">
+                                <img id="imageCropPreview" src="#" alt="Preview" style="max-width: 100%;">
+                            </div>
+
+                            <!-- Preview Hasil Crop -->
+                            <div id="finalPreviewContainer" class="text-center" style="display: none;">
+                                <img id="finalPreview" src="#" alt="Hasil Crop" style="max-width: 100%;">
+                            </div>
+
+                            <!-- Tombol Crop dan Simpan -->
+                            <div class="mt-2 mb-3 text-center">
+                                <button type="button" id="cropButton" class="btn btn-warning" style="display: none;" onclick="showCropper()">Crop Gambar</button>
+                                <button type="button" id="saveCropButton" class="btn btn-primary" style="display: none;" onclick="getCroppedImage()">Simpan</button>
                             </div>
                         </div>
-                
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                            <button type="button" class="btn btn-primary" onclick="getCroppedImage()">Simpan</button>
+                            <button type="submit" class="btn btn-success">Simpan Data</button>
                         </div>
                     </div>
                 </form>
@@ -134,6 +155,14 @@
     let cropper;
     const inputFile = document.getElementById('coverEvent');
     const previewImage = document.getElementById('imageCropPreview');
+    const cropContainer = document.getElementById('cropContainer');
+    const finalPreviewContainer = document.getElementById('finalPreviewContainer');
+    const finalPreview = document.getElementById('finalPreview');
+    const cropButton = document.getElementById('cropButton');
+    const saveCropButton = document.getElementById('saveCropButton');
+
+    // Sembunyikan tombol "Crop Gambar" saat awal
+    cropButton.style.display = 'none';
 
     // Event listener ketika file diunggah
     inputFile.addEventListener('change', function(event) {
@@ -141,40 +170,70 @@
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                // Tampilkan gambar di elemen preview
                 previewImage.src = e.target.result;
-                previewImage.style.display = 'block';
+                cropContainer.style.display = 'block';
+                finalPreviewContainer.style.display = 'none';
+                saveCropButton.style.display = 'inline-block';
 
-                // Hapus instance cropper sebelumnya
                 if (cropper) {
                     cropper.destroy();
                 }
-
-                // Inisialisasi Cropper.js
                 cropper = new Cropper(previewImage, {
-                    aspectRatio: 16 / 9, // Sesuaikan aspek rasio
-                    viewMode: 1,
+                    aspectRatio: 16 / 9,
+                    viewMode: 2,
+                    autoCropArea: 1, // Area crop diperbesar
                     movable: true,
                     zoomable: true,
                     rotatable: true,
                     scalable: true,
+                    minContainerWidth: 200, // Lebarkan area crop
+                    minContainerHeight: 300
                 });
             };
             reader.readAsDataURL(file);
         }
     });
 
-    // Fungsi untuk mendapatkan data hasil crop
+    // Fungsi menampilkan cropper saat "Crop Gambar" ditekan lagi
+    function showCropper() {
+        cropContainer.style.display = 'block';
+        finalPreviewContainer.style.display = 'none';
+        cropButton.style.display = 'none';
+        saveCropButton.style.display = 'inline-block';
+
+        if (cropper) {
+            cropper.destroy();
+        }
+        cropper = new Cropper(previewImage, {
+            aspectRatio: 16 / 9,
+            viewMode: 2,
+            autoCropArea: 1, // Area crop diperbesar
+            movable: true,
+            zoomable: true,
+            rotatable: true,
+            scalable: true,
+            minContainerWidth: 200, // Lebarkan area crop
+            minContainerHeight: 300
+        });
+    }
+
+    // Fungsi untuk mendapatkan hasil crop
     function getCroppedImage() {
         if (cropper) {
             const croppedCanvas = cropper.getCroppedCanvas();
             const croppedImage = croppedCanvas.toDataURL('image/jpeg');
 
+            // Tampilkan hasil crop saja
+            finalPreview.src = croppedImage;
+            finalPreviewContainer.style.display = 'block';
+            cropContainer.style.display = 'none';
+            cropButton.style.display = 'inline-block'; // Tombol crop muncul setelah simpan
+            saveCropButton.style.display = 'none';
+
             // Kirim hasil crop ke server
             const formData = new FormData();
             formData.append('croppedImage', croppedImage);
 
-            // Contoh menggunakan fetch API untuk mengirim hasil crop
             fetch('/upload-cropped-image', {
                 method: 'POST',
                 body: formData,
@@ -196,22 +255,6 @@
     }
 </script>
 
-
-<script>
-    // Dropzone
-    var dropzonePreviewNode = document.querySelector("#dropzone-preview-list");
-    dropzonePreviewNode.id = "";
-    if (dropzonePreviewNode) {
-        var previewTemplate = dropzonePreviewNode.parentNode.innerHTML;
-        dropzonePreviewNode.parentNode.removeChild(dropzonePreviewNode);
-        var dropzone = new Dropzone(".dropzone", {
-            url: 'https://httpbin.org/post',
-            method: "post",
-            previewTemplate: previewTemplate,
-            previewsContainer: "#dropzone-preview",
-        });
-    }
-</script>
 
 <script type="text/javascript">
     $(function () {
