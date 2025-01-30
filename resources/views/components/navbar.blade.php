@@ -38,7 +38,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        <h6 class="dropdown-header">Welcome Admin!</h6>
+                        <h6 class="dropdown-header">Selamt Datang User!</h6>
                         <a class="dropdown-item" href="pages-profile.php">
                             <i class="bx bx-user-circle text-muted fs-18 align-middle me-1"></i>
                             <span class="align-middle">Profile</span>
@@ -47,7 +47,7 @@
 
                         <a class="dropdown-item text-danger" href="">
                             <i class="bx bx-log-out fs-18 align-middle me-1"></i>
-                            <span class="align-middle">Logout</span>
+                            <span class="align-middle">Keluar</span>
                         </a>
                     </div>
                 </div>
