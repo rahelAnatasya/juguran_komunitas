@@ -21,7 +21,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // =============== HomePage ===============
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
-
+Route::get('/detail', [HomepageController::class, 'detail'])->name('homepage.detail');
 
 
 // =============== Admin Menu ===============

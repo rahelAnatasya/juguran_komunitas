@@ -12,4 +12,7 @@ class HomepageController extends Controller
             'title' => 'Juguran Komunitas'
         ]);
     }
+    public function detail() {
+        return view('homepage.detail');
+    }
 }
