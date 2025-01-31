@@ -5,7 +5,7 @@
         <div class="row py-2 border-3 border-bottom">
           <a
             class="col-12 col-md-6 text-decoration-none lh-1 color-primary-dark text-start"
-            href="/"
+            href="{{route('homepage')}}"
           >
             <div
               class="w-100 d-flex align-items-center fw-bold justify-content-center justify-content-md-start"

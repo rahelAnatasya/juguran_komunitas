@@ -4,18 +4,18 @@
 
 <!-- Hero Section -->
 <div class="container py-1 pt-5 mt-5">
-    <div class="row mx-4 pt-5 pt-lg-3 align-items-center">
+    <div class="row mx-1 mx-md-4 pt-5 pt-lg-3 align-items-center">
         <div class="col-12 col-lg-6 d-flex flex-column gap-2">
-            <p class="fw-semibold m-0">#RuangBersama</p>
-            <h1 class="display-5 fw-bold lh-1">
+            <p class="m-0 font-hashtag">#RuangBersama</p>
+            <h1 class="hero-title">
                 Merajut Kebersamaan, <br />Berbagi Cerita Komunitas
             </h1>
-            <p class="text-black text-opacity-75">
+            <p class="text-blac font-17-500 text-opacity-75">
                 Selamat Datang di Juguran Komunitas - Ruang berbagi, inspirasi, dan
                 kolaborasi untuk menciptakan perubahan positif bersama!
             </p>
             <div>
-                <a href="#" class="btn bg-primary-dark py-2 px-4 rounded-pill text-white fw-bold fs-6 btn-lg">Pelajari
+                <a href="#" class="btn bg-primary-dark hero-cta rounded-pill text-white fw-bold fs-6 btn-lg">Pelajari
                     Lebih Lanjut
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.0742 12L14.0742 18M20.0742 12L14.0742 6M20.0742 12H9.57416M4.07416 12H6.57416"
@@ -24,8 +24,9 @@
                 </a>
             </div>
         </div>
-        <div class="col-12 pt-5 mt-lg-5 col-lg-6">
-            <img class="w-100 object-fit-contain" style="max-height: 620px" src="/assets/images/hero.png" alt="" />
+        <div class="col-12 mt-lg-2 px-1 col-lg-6">
+            <img class="w-100 object-fit-contain" style="max-height: 620px" src="{{ asset('assets/images/hero.png') }}"
+                alt="" />
         </div>
     </div>
 </div>
@@ -33,24 +34,24 @@
 <!-- Why Join Section -->
 <section class="pt-5">
     <div class="container d-grid gap-3 text-center">
-        <h1 class="m-0 fw-bold fs-2">Kenapa Harus Ikut Juguran Komunitas?</h1>
-        <p class="m-0 text-black text-opacity-75">
+        <h1 class="m-0 fw-bold font-hashtag">Kenapa Harus Ikut Juguran Komunitas?</h1>
+        <p class="m-0 text-black text-opacity-75 font-subtitle">
             Jadikan setiap pertemuan sebagai kesempatan untuk berbagi, belajar,
             dan tumbuh bersama
         </p>
         <div class="row mx-auto" style="max-width: 1048px">
             <div class="col-lg-3 col-6 py-2">
                 <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
-                    <div class="h-100 justify-content-between gap-2 py-3">
-                        <div style="min-height: 64px">
-                            <svg style="height: 60px; width: 60px" width="51" height="50" viewBox="0 0 51 50"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="h-100 justify-content-between gap-2 py-0">
+                        <div class="py-md-3 mb-2" style="min-height: 50px;">
+                            <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M17.4643 25C18.5196 25 19.5645 24.7922 20.5394 24.3883C21.5144 23.9845 22.4002 23.3926 23.1464 22.6464C23.8926 21.9002 24.4845 21.0144 24.8883 20.0394C25.2922 19.0645 25.5 18.0196 25.5 16.9643C25.5 15.909 25.2922 14.8641 24.8883 13.8892C24.4845 12.9142 23.8926 12.0284 23.1464 11.2822C22.4002 10.536 21.5144 9.9441 20.5394 9.54027C19.5645 9.13644 18.5196 8.92859 17.4643 8.92859C15.3331 8.92859 13.2892 9.77521 11.7822 11.2822C10.2752 12.7892 9.42858 14.8331 9.42858 16.9643C9.42858 19.0955 10.2752 21.1394 11.7822 22.6464C13.2892 24.1534 15.3331 25 17.4643 25ZM42.4643 18.75C42.4643 19.5708 42.3026 20.3835 41.9885 21.1418C41.6745 21.9001 41.2141 22.5891 40.6337 23.1694C40.0534 23.7498 39.3644 24.2102 38.6061 24.5243C37.8478 24.8384 37.0351 25 36.2143 25C35.3935 25 34.5808 24.8384 33.8225 24.5243C33.0642 24.2102 32.3752 23.7498 31.7949 23.1694C31.2145 22.5891 30.7541 21.9001 30.4401 21.1418C30.126 20.3835 29.9643 19.5708 29.9643 18.75C29.9643 17.0924 30.6228 15.5027 31.7949 14.3306C32.967 13.1585 34.5567 12.5 36.2143 12.5C37.8719 12.5 39.4616 13.1585 40.6337 14.3306C41.8058 15.5027 42.4643 17.0924 42.4643 18.75ZM4.07144 32.5893C4.07144 31.5237 4.49475 30.5017 5.24824 29.7482C6.00174 28.9948 7.0237 28.5714 8.0893 28.5714H26.0964C25.0756 29.3636 24.2498 30.379 23.6821 31.5397C23.1144 32.7005 22.82 33.9758 22.8214 35.2679C22.8214 37.6375 23.7929 39.7804 25.3607 41.3197C23.4607 42.2393 20.9036 42.8572 17.4643 42.8572C4.07144 42.8572 4.07144 33.4822 4.07144 33.4822V32.5893ZM31.3036 31.25C30.238 31.25 29.216 31.6733 28.4625 32.4268C27.709 33.1803 27.2857 34.2023 27.2857 35.2679C27.2857 36.3335 27.709 37.3554 28.4625 38.1089C29.216 38.8624 30.238 39.2857 31.3036 39.2857H32.1964C32.5516 39.2857 32.8923 39.4268 33.1435 39.678C33.3946 39.9292 33.5357 40.2698 33.5357 40.625C33.5357 40.9802 33.3946 41.3209 33.1435 41.572C32.8923 41.8232 32.5516 41.9643 32.1964 41.9643H31.3036C29.5276 41.9643 27.8243 41.2588 26.5685 40.003C25.3127 38.7471 24.6072 37.0439 24.6072 35.2679C24.6072 33.4919 25.3127 31.7886 26.5685 30.5328C27.8243 29.277 29.5276 28.5714 31.3036 28.5714H32.1964C32.5516 28.5714 32.8923 28.7125 33.1435 28.9637C33.3946 29.2149 33.5357 29.5555 33.5357 29.9107C33.5357 30.2659 33.3946 30.6066 33.1435 30.8577C32.8923 31.1089 32.5516 31.25 32.1964 31.25H31.3036ZM29.9643 35.2679C29.9643 34.9127 30.1054 34.572 30.3566 34.3209C30.6077 34.0697 30.9484 33.9286 31.3036 33.9286H41.125C41.4802 33.9286 41.8209 34.0697 42.072 34.3209C42.3232 34.572 42.4643 34.9127 42.4643 35.2679C42.4643 35.6231 42.3232 35.9637 42.072 36.2149C41.8209 36.4661 41.4802 36.6072 41.125 36.6072H31.3036C30.9484 36.6072 30.6077 36.4661 30.3566 36.2149C30.1054 35.9637 29.9643 35.6231 29.9643 35.2679ZM41.125 39.2857C42.1906 39.2857 43.2126 38.8624 43.9661 38.1089C44.7196 37.3554 45.1429 36.3335 45.1429 35.2679C45.1429 34.2023 44.7196 33.1803 43.9661 32.4268C43.2126 31.6733 42.1906 31.25 41.125 31.25H40.2322C39.877 31.25 39.5363 31.1089 39.2851 30.8577C39.034 30.6066 38.8929 30.2659 38.8929 29.9107C38.8929 29.5555 39.034 29.2149 39.2851 28.9637C39.5363 28.7125 39.877 28.5714 40.2322 28.5714H41.125C42.901 28.5714 44.6043 29.277 45.8601 30.5328C47.1159 31.7886 47.8214 33.4919 47.8214 35.2679C47.8214 37.0439 47.1159 38.7471 45.8601 40.003C44.6043 41.2588 42.901 41.9643 41.125 41.9643H40.2322C39.877 41.9643 39.5363 41.8232 39.2851 41.572C39.034 41.3209 38.8929 40.9802 38.8929 40.625C38.8929 40.2698 39.034 39.9292 39.2851 39.678C39.5363 39.4268 39.877 39.2857 40.2322 39.2857H41.125Z"
                                     fill="white" />
                             </svg>
                         </div>
-                        <h3 class="fw-semibold fs-4 text-wrap">Meningkat<br class="d-inline d-sm-none" />kan Koneksi
+                        <h3 class="feature-title text-wrap">Meningkat<br class="d-inline d-sm-none" />kan Koneksi
                         </h3>
                         <p class="font-sm-small">
                             Perluas Jaringan dan temui orang-orang dengan minat yang sama
@@ -60,8 +61,9 @@
             </div>
             <div class="col-lg-3 col-6 py-2">
                 <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
-                    <div class="h-100 justify-content-between gap-2 py-3">
-                        <div style="min-height: 64px">
+                    <div class="h-100 justify-content-between gap-2 py-0">
+                        <div class="py-md-3 mb-2" style="min-height: 50px;">
+
                             <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -69,7 +71,7 @@
                                     fill="white" />
                             </svg>
                         </div>
-                        <h3 class="fw-semibold fs-4">Berbagi Pengalaman</h3>
+                        <h3 class="feature-title text-wrap">Berbagi Pengalaman</h3>
                         <p class="font-sm-small">
                             Bagikan perjalanan dan pelajaran berharga yang bisa
                             menginspirasi.
@@ -77,10 +79,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-3 col-6 py-2">
                 <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
-                    <div class="dcontent-between gap-2 py-3">
-                        <div style="min-height: 64px">
+                    <div class="h-100 justify-content-between gap-2 py-0">
+                        <div class="py-md-3 mb-2" style="min-height: 50px;">
                             <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -91,17 +94,18 @@
                                     stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
+                        <h3 class="feature-title text-wrap">Wawasan Baru</h3>
+
+                        <p class="font-sm-small">
+                            Dapatkan wawasan baru dari sudut pandang yang berbeda dan unik.
+                        </p>
                     </div>
-                    <h3 class="fw-semibold fs-4">Wawasan Baru</h3>
-                    <p class="font-sm-small">
-                        Dapatkan wawasan baru dari sudut pandang yang berbeda dan unik.
-                    </p>
                 </div>
             </div>
             <div class="col-lg-3 col-6 py-2">
                 <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
-                    <div class="h-100 justify-content-between gap-2 py-3">
-                        <div style="min-height: 64px">
+                    <div class="h-100 justify-content-between gap-2 py-0">
+                        <div class="py-md-3 mb-2" style="min-height: 50px;">
                             <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -109,7 +113,7 @@
                                     fill="white" />
                             </svg>
                         </div>
-                        <h3 class="fw-semibold fs-4">Dukungan Positif</h3>
+                        <h3 class="feature-title text-wrap">Dukungan Positif</h3>
                         <p class="font-sm-small">
                             Temukan dukungan dan motivasi untuk berkembang bersama secara
                             positif.
@@ -123,21 +127,22 @@
 
 <!-- Events Section -->
 <section class="py-5">
-    <div class="container">
-        <div class="row align-items-center mb-4">
+    <div class="container ">
+        <div class="row mx-1 align-items-center mb-4">
             <div class="col-12 col-lg">
-                <h1 class="m-0 fw-bold fs-3">Acara Seru yang Akan Datang</h1>
-                <p class="text-opacity-75 text-black">
+                <h1 class="m-0 fw-bold font-hashtag">Acara Seru yang Akan Datang</h1>
+                <p class="text-opacity-75 pt-2 text-black font-subtitle">
                     Ikuti acara menarik yang akan datang dan dapatkan pengalaman baru
                 </p>
             </div>
             <div class="col-12 col-lg">
                 <div class="row w-100 mx-auto">
-                    <div
-                        class="col col-lg-auto overflow-hidden px-1 d-flex ms-lg-auto flex-grow-1 flex-lg-grow-0 align-items-center border border-3 rounded-4">
-                        <input style="outline: 0;" class="border-0 p-3 w-100 fs-6
+                    <div class="col col-lg-auto overflow-hidden px-1 d-flex ms-lg-auto flex-grow-1 flex-lg-grow-0 align-items-center border border-3 rounded-4"
+                        style="height: fit-content;">
+                        <input style="outline: 0;" class="border-0 px-3 py-2 w-100 fs-6
                 type=" text" placeholder="Search" />
-                        <button class="rounded-pill border-0 d-flex justify-content-center align-items-center bg-white">
+                        <button class="rounded-pill border-0 d-flex justify-content-center align-items-center bg-white"
+                            style="height: 42px; width: 42px">
                             <svg width="48" height="48" viewBox="0 0 48 49" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <rect y="0.106689" width="48" height="48" rx="24" fill="#724CB4" />
@@ -151,39 +156,43 @@
                         </button>
                     </div>
                     <div class="col-auto">
-                        <img src="/assets/images/icon/filter.svg" style="height: 56px; width: 56px" alt="Filter Icon" />
+                        <img src="{{ asset('assets/images/icon/filter.svg') }}" style="height: 42px; width: 42px"
+                            alt="Filter Icon" />
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 mx-1">
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow border-0">
-                    <div class="p-3">
-                        <div style="width: 364px; height: 364px"
+                <div class="card shadow-lg border-0">
+                    <div class="rounded-3 overflow-hidden">
+                        <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
                             <span
                                 class="text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
                             <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                src="assets/images/poster-januari-2025.jpg" alt="Event Image" />
+                                src="{{ asset('assets/images/poster-januari-2025.jpg') }}" alt="Event Image" />
                         </div>
-                        <div class="d-flex mt-3 flex-column gap-2">
-                            <h5 class="card-title text-uppercase fw-bold">
+                        <div class="d-flex p-3 flex-column gap-2">
+                            <h5 class="card-title font-20-700 text-uppercase">
                                 Juguran Komunitas - Transform Your Design Skills
                             </h5>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/calendar.svg" alt="Calendar Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/calendar.svg') }}"
+                                    alt="Calendar Icon" />
                                 <p class="m-0 ps-3">Januari 25, 2025</p>
                             </div>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/location.svg" alt="Location Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/location.svg') }}"
+                                    alt="Location Icon" />
                                 <p class="m-0 ps-3">
                                     Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
                                 </p>
                             </div>
-                            <a href="#" class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                            <a href="{{ route('homepage.detail') }}"
+                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -192,90 +201,33 @@
 
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow border-0">
-                    <div class="p-3">
-                        <div style="width: 364px; height: 364px"
+                <div class="card shadow-lg border-0">
+                    <div class="rounded-3 overflow-hidden">
+                        <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
                             <span
                                 class="text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
                             <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                src="assets/images/poster-januari-2025.jpg" alt="Event Image" />
+                                src="{{ asset('assets/images/poster-januari-2025.jpg') }}" alt="Event Image" />
                         </div>
-                        <div class="d-flex mt-3 flex-column gap-2">
-                            <h5 class="card-title text-uppercase fw-bold">
+                        <div class="d-flex p-3 flex-column gap-2">
+                            <h5 class="card-title font-20-700 text-uppercase">
                                 Juguran Komunitas - Transform Your Design Skills
                             </h5>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/calendar.svg" alt="Calendar Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/calendar.svg') }}"
+                                    alt="Calendar Icon" />
                                 <p class="m-0 ps-3">Januari 25, 2025</p>
                             </div>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/location.svg" alt="Location Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/location.svg') }}"
+                                    alt="Location Icon" />
                                 <p class="m-0 ps-3">
                                     Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
                                 </p>
                             </div>
-                            <a href="#" class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- card end --><!-- card -->
-            <div class="col-md-6 col-xl-4">
-                <div class="card shadow border-0">
-                    <div class="p-3">
-                        <div style="width: 364px; height: 364px"
-                            class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
-                            <span
-                                class="text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
-                            <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                src="assets/images/poster-januari-2025.jpg" alt="Event Image" />
-                        </div>
-                        <div class="d-flex mt-3 flex-column gap-2">
-                            <h5 class="card-title text-uppercase fw-bold">
-                                Juguran Komunitas - Transform Your Design Skills
-                            </h5>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/calendar.svg" alt="Calendar Icon" />
-                                <p class="m-0 ps-3">Januari 25, 2025</p>
-                            </div>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/location.svg" alt="Location Icon" />
-                                <p class="m-0 ps-3">
-                                    Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
-                                </p>
-                            </div>
-                            <a href="#" class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- card end --><!-- card -->
-            <div class="col-md-6 col-xl-4">
-                <div class="card shadow border-0">
-                    <div class="p-3">
-                        <div style="width: 364px; height: 364px"
-                            class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
-                            <span
-                                class="d-none text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
-                            <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                src="assets/images/poster-januari-2025.jpg" alt="Event Image" />
-                        </div>
-                        <div class="d-flex mt-3 flex-column gap-2">
-                            <h5 class="card-title text-uppercase fw-bold">
-                                Juguran Komunitas - Transform Your Design Skills
-                            </h5>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/calendar.svg" alt="Calendar Icon" />
-                                <p class="m-0 ps-3">Januari 25, 2025</p>
-                            </div>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/location.svg" alt="Location Icon" />
-                                <p class="m-0 ps-3">
-                                    Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
-                                </p>
-                            </div>
-                            <a href="#" class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                            <a href="{{ route('homepage.detail') }}"
+                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -283,67 +235,141 @@
             <!-- card end -->
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow border-0">
-                    <div class="p-3">
-                        <div style="width: 364px; height: 364px"
+                <div class="card shadow-lg border-0">
+                    <div class="rounded-3 overflow-hidden">
+                        <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
                             <span
-                                class="d-none text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
+                                class="text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
                             <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                src="assets/images/poster-januari-2025.jpg" alt="Event Image" />
+                                src="{{ asset('assets/images/poster-januari-2025.jpg') }}" alt="Event Image" />
                         </div>
-                        <div class="d-flex mt-3 flex-column gap-2">
-                            <h5 class="card-title text-uppercase fw-bold">
+                        <div class="d-flex p-3 flex-column gap-2">
+                            <h5 class="card-title font-20-700 text-uppercase">
                                 Juguran Komunitas - Transform Your Design Skills
                             </h5>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/calendar.svg" alt="Calendar Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/calendar.svg') }}"
+                                    alt="Calendar Icon" />
                                 <p class="m-0 ps-3">Januari 25, 2025</p>
                             </div>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/location.svg" alt="Location Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/location.svg') }}"
+                                    alt="Location Icon" />
                                 <p class="m-0 ps-3">
                                     Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
                                 </p>
                             </div>
-                            <a href="#" class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                            <a href="{{ route('homepage.detail') }}"
+                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- card end --><!-- card -->
+            <!-- card end -->
+            <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow border-0">
-                    <div class="p-3">
-                        <div style="width: 364px; height: 364px"
+                <div class="card shadow-lg border-0">
+                    <div class="rounded-3 overflow-hidden">
+                        <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
-                            <span
-                                class="d-none text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">Expired</span>
+
                             <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                src="assets/images/poster-januari-2025.jpg" alt="Event Image" />
+                                src="{{ asset('assets/images/poster-januari-2025.jpg') }}" alt="Event Image" />
                         </div>
-                        <div class="d-flex mt-3 flex-column gap-2">
-                            <h5 class="card-title text-uppercase fw-bold">
+                        <div class="d-flex p-3 flex-column gap-2">
+                            <h5 class="card-title font-20-700 text-uppercase">
                                 Juguran Komunitas - Transform Your Design Skills
                             </h5>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/calendar.svg" alt="Calendar Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/calendar.svg') }}"
+                                    alt="Calendar Icon" />
                                 <p class="m-0 ps-3">Januari 25, 2025</p>
                             </div>
-                            <div class="d-flex align-items-center align-content-center">
-                                <img style="height: 20px" src="assets/images/icon/location.svg" alt="Location Icon" />
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/location.svg') }}"
+                                    alt="Location Icon" />
                                 <p class="m-0 ps-3">
                                     Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
                                 </p>
                             </div>
-                            <a href="#" class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                            <a href="{{ route('homepage.detail') }}"
+                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- card end -->
 
-            <!-- Duplicate this block for more events -->
+            <!-- card -->
+            <div class="col-md-6 col-xl-4">
+                <div class="card shadow-lg border-0">
+                    <div class="rounded-3 overflow-hidden">
+                        <div
+                            class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
+
+                            <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
+                                src="{{ asset('assets/images/poster-januari-2025.jpg') }}" alt="Event Image" />
+                        </div>
+                        <div class="d-flex p-3 flex-column gap-2">
+                            <h5 class="card-title font-20-700 text-uppercase">
+                                Juguran Komunitas - Transform Your Design Skills
+                            </h5>
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/calendar.svg') }}"
+                                    alt="Calendar Icon" />
+                                <p class="m-0 ps-3">Januari 25, 2025</p>
+                            </div>
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/location.svg') }}"
+                                    alt="Location Icon" />
+                                <p class="m-0 ps-3">
+                                    Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
+                                </p>
+                            </div>
+                            <a href="{{ route('homepage.detail') }}"
+                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- card end -->
+
+            <!-- card -->
+            <div class="col-md-6 col-xl-4">
+                <div class="card shadow-lg border-0">
+                    <div class="rounded-3 overflow-hidden">
+                        <div
+                            class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
+
+                            <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
+                                src="{{ asset('assets/images/poster-januari-2025.jpg') }}" alt="Event Image" />
+                        </div>
+                        <div class="d-flex p-3 flex-column gap-2">
+                            <h5 class="card-title font-20-700 text-uppercase">
+                                Juguran Komunitas - Transform Your Design Skills
+                            </h5>
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/calendar.svg') }}"
+                                    alt="Calendar Icon" />
+                                <p class="m-0 ps-3">Januari 25, 2025</p>
+                            </div>
+                            <div class="d-flex font-14 align-items-center align-content-center">
+                                <img style="height: 20px" src="{{ asset('assets/images/icon/location.svg') }}"
+                                    alt="Location Icon" />
+                                <p class="m-0 ps-3">
+                                    Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas
+                                </p>
+                            </div>
+                            <a href="{{ route('homepage.detail') }}"
+                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- card end -->
+
+
         </div>
     </div>
 </section>
