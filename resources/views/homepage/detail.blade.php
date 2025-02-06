@@ -11,17 +11,17 @@
 <div class="container py-4">
   <div class="mx-1">
     <div class="d-flex gap-3 justify-content-between justify-content-sm-start">
-      <button class="border-0 p-0 overflow-hidden d-flex align-items-center rounded-3 text-white"
+      <button class="card-hover border-0 p-0 overflow-hidden d-flex align-items-center rounded-3 text-white"
         style="background-color: #434a4d">
         <img class="p-0" src="{{ asset('assets/images/icon/copy.svg') }}" alt="" />
         <span class="px-2 px-md-3 font-sm-small">Copy</span>
       </button>
-      <button class="border-0 p-0 overflow-hidden d-flex align-items-center rounded-3 text-white"
+      <button class="card-hover border-0 p-0 overflow-hidden d-flex align-items-center rounded-3 text-white"
         style="background-color: #34af23">
         <img class="" src="{{ asset('assets/images/icon/whatsapp.svg') }}" alt="" />
         <span class="px-2 px-md-3 font-sm-small">Whatsapp</span>
       </button>
-      <button class="border-0 p-0 overflow-hidden d-flex align-items-center rounded-3 text-white"
+      <button class="card-hover border-0 p-0 overflow-hidden d-flex align-items-center rounded-3 text-white"
         style="background-color: #9d38b6">
         <img class="" src="{{ asset('assets/images/icon/instagram2.svg') }}" alt="" />
         <span class="px-2 px-md-3 font-sm-small">Instagram</span>
@@ -66,7 +66,7 @@
               </div>
             </div>
           </div>
-          <a class="btn bg-primary-dark text-white w-100 fw-bold py-2 my-3" href="">Lihat Detail</a>
+          <a class="button-hover btn bg-primary-dark text-white w-100 fw-bold py-2 my-3" href="">Lihat Detail</a>
         </div>
       </div>
       <div class="col-12 col-lg-6">

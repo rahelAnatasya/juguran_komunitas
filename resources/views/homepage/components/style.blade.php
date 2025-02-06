@@ -168,4 +168,75 @@
             font-weight: 700;
         }
     }
+
+    .card-hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Rainbow gradient border effect */
+    .card-hover-rainbow:hover {
+        background: linear-gradient(white, white) padding-box,
+            linear-gradient(45deg,
+                #ff6b6b,
+                #ffd93d,
+                #6c5ce7,
+                #a8e6cf,
+                #ff6b6b) border-box;
+        border: 2px solid transparent;
+        border-radius: 8px;
+    }
+
+    /* Neon glow effect */
+    .card-hover-neon:hover {
+        box-shadow: 0 0 10px #ff6b6b,
+            0 0 20px #ffd93d,
+            0 0 30px #6c5ce7;
+        border-color: #ff6b6b;
+    }
+
+    /* Colorful scale effect */
+    .card-hover-scale:hover {
+        transform: scale(1.03);
+        background: linear-gradient(135deg,
+                rgba(255, 107, 107, 0.1),
+                rgba(108, 92, 231, 0.1));
+    }
+
+    .button-hover {
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease;
+        z-index: 1;
+    }
+
+    .button-hover::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(135deg,
+                rgba(106, 106, 207, 1) 0%,
+                rgba(106, 106, 207, 0.5) 100%);
+        transition: width 0.3s ease;
+        z-index: -1;
+    }
+
+    .button-hover:hover::before {
+        width: 100%;
+    }
+
+    .button-hover:not(:hover)::before {
+        left: auto;
+        right: 0;
+        width: 0;
+        transition: width 0.3s ease;
+    }
 </style>

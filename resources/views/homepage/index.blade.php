@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<div class="container py-1 pt-5 mt-5">
+<div data-aos="fade-up" data-aos-duration="3000" class="container py-1 pt-5 mt-5">
     <div class="row mx-1 mx-md-4 pt-5 pt-lg-3 align-items-center">
         <div class="col-12 col-lg-6 d-flex flex-column gap-2">
             <p class="m-0 font-hashtag">#RuangBersama</p>
@@ -15,7 +15,8 @@
                 kolaborasi untuk menciptakan perubahan positif bersama!
             </p>
             <div>
-                <a href="#" class="btn bg-primary-dark hero-cta rounded-pill text-white fw-bold fs-6 btn-lg">Pelajari
+                <a href="#"
+                    class="button-hover btn bg-primary-dark hero-cta rounded-pill text-white fw-bold fs-6 btn-lg">Pelajari
                     Lebih Lanjut
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.0742 12L14.0742 18M20.0742 12L14.0742 6M20.0742 12H9.57416M4.07416 12H6.57416"
@@ -32,7 +33,7 @@
 </div>
 
 <!-- Why Join Section -->
-<section class="pt-5">
+<section data-aos="fade-right" data-aos-duration="300" data-aos-easing="ease-in-sine" class="pt-5">
     <div class="container d-grid gap-3 text-center">
         <h1 class="m-0 fw-bold font-hashtag">Kenapa Harus Ikut Juguran Komunitas?</h1>
         <p class="m-0 text-black text-opacity-75 font-subtitle">
@@ -41,7 +42,7 @@
         </p>
         <div class="row mx-auto" style="max-width: 1048px">
             <div class="col-lg-3 col-6 py-2">
-                <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
+                <div class="card-hover bg-primary text-white rounded-4 py-2 px-3 h-100">
                     <div class="h-100 justify-content-between gap-2 py-0">
                         <div class="py-md-3 mb-2" style="min-height: 50px;">
                             <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
@@ -60,7 +61,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-6 py-2">
-                <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
+                <div class="card-hover bg-primary text-white rounded-4 py-2 px-3 h-100">
                     <div class="h-100 justify-content-between gap-2 py-0">
                         <div class="py-md-3 mb-2" style="min-height: 50px;">
 
@@ -81,7 +82,7 @@
             </div>
 
             <div class="col-lg-3 col-6 py-2">
-                <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
+                <div class="card-hover bg-primary text-white rounded-4 py-2 px-3 h-100">
                     <div class="h-100 justify-content-between gap-2 py-0">
                         <div class="py-md-3 mb-2" style="min-height: 50px;">
                             <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-6 py-2">
-                <div class="bg-primary text-white rounded-4 py-2 px-3 h-100">
+                <div class="card-hover bg-primary text-white rounded-4 py-2 px-3 h-100">
                     <div class="h-100 justify-content-between gap-2 py-0">
                         <div class="py-md-3 mb-2" style="min-height: 50px;">
                             <svg width="51" height="50" viewBox="0 0 51 50" fill="none"
@@ -166,7 +167,7 @@
         <div class="row g-4 mx-1">
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow-lg border-0">
+                <div class="card-hover card shadow-lg border-0">
                     <div class="rounded-3 overflow-hidden">
                         <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
@@ -192,7 +193,7 @@
                                 </p>
                             </div>
                             <a href="{{ route('homepage.detail') }}"
-                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                                class=" button-hover btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +202,7 @@
 
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow-lg border-0">
+                <div class="card-hover card shadow-lg border-0">
                     <div class="rounded-3 overflow-hidden">
                         <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
@@ -227,7 +228,7 @@
                                 </p>
                             </div>
                             <a href="{{ route('homepage.detail') }}"
-                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                                class=" button-hover btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -235,7 +236,7 @@
             <!-- card end -->
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow-lg border-0">
+                <div class="card-hover card shadow-lg border-0">
                     <div class="rounded-3 overflow-hidden">
                         <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
@@ -261,7 +262,7 @@
                                 </p>
                             </div>
                             <a href="{{ route('homepage.detail') }}"
-                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                                class=" button-hover btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -269,7 +270,7 @@
             <!-- card end -->
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow-lg border-0">
+                <div class="card-hover card shadow-lg border-0">
                     <div class="rounded-3 overflow-hidden">
                         <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
@@ -294,7 +295,7 @@
                                 </p>
                             </div>
                             <a href="{{ route('homepage.detail') }}"
-                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                                class="button-hover btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -303,7 +304,7 @@
 
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow-lg border-0">
+                <div class="card-hover card shadow-lg border-0">
                     <div class="rounded-3 overflow-hidden">
                         <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
@@ -328,7 +329,7 @@
                                 </p>
                             </div>
                             <a href="{{ route('homepage.detail') }}"
-                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                                class="button-hover btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -337,7 +338,7 @@
 
             <!-- card -->
             <div class="col-md-6 col-xl-4">
-                <div class="card shadow-lg border-0">
+                <div class="card-hover card shadow-lg border-0">
                     <div class="rounded-3 overflow-hidden">
                         <div
                             class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
@@ -362,7 +363,7 @@
                                 </p>
                             </div>
                             <a href="{{ route('homepage.detail') }}"
-                                class="btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
+                                class="button-hover btn bg-primary-dark py-2 text-white fw-bold mt-2">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
