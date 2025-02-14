@@ -42,7 +42,7 @@
             <li class="menu-title">menu</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="apps-chat.php">
+                <a class="nav-link" href="{{ route('event') }}">
                     <span class="nav-icon">
                         <i class='bx bxs-user'></i>
                     </span>
