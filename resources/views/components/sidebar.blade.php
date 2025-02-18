@@ -42,33 +42,16 @@
             <li class="menu-title">menu</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="apps-chat.php">
+                <a class="nav-link" href="{{ route('event') }}">
                     <span class="nav-icon">
                         <i class='bx bxs-user'></i>
                     </span>
                     <span class="nav-text"> Semua Acara </span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link menu-arrow" href="#yourEvent" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="yourEvent">
-                    <span class="nav-icon">
-                        <iconify-icon
-                            icon="iconamoon:home-duotone"
-                        ></iconify-icon>
-                    </span>
-                    <span class="nav-text">Acara </span>
-                </a>
-                <div class="collapse" id="yourEvent">
-                    <ul class="nav sub-navbar-nav">
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('your-event') }}">Daftar Acara</a>
-                        </li>
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('your-event') }}">Acara Diikuti</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+
+            <li class="menu-title">akun</li>
+
             <li class="nav-item">
                 <a class="nav-link text-danger" href="apps-chat.php">
                     <span class="nav-icon">
