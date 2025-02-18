@@ -77,11 +77,11 @@
                     <div class="row w-100 mx-auto">
                         <div class="col col-lg-auto overflow-hidden px-1 d-flex ms-lg-auto flex-grow-1 flex-lg-grow-0 align-items-center border border-3 rounded-4"
                             style="height: fit-content;">
-                            <input style="outline: 0;" class="border-0 px-3 py-2 w-100 fs-6
-                                        type=" text" placeholder="Search" />
+                            <input style="outline: 0;" class="border-0 px-3 py-2 w-100 fs-6" type="text"
+                                placeholder="Search" />
                             <button class="rounded-pill border-0 d-flex justify-content-center align-items-center bg-white"
                                 style="height: 42px; width: 42px">
-                                <img class="h-100 py-1" src="{{ asset('assets/images/logo/search.svg') }}" />
+                                <img class="h-100 py-1" src="{{ asset('assets/images/icon/search.svg') }}" />
                             </button>
                         </div>
                         <div class="col-auto">
