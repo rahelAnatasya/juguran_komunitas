@@ -12,11 +12,8 @@
                 <!-- App Search-->
                 <form class="app-search d-none d-md-block me-auto">
                     <div class="position-relative">
-                        <input type="search" class="form-control" placeholder="Search..." autocomplete="off" value=""/>
-                        <iconify-icon
-                            icon="iconamoon:search-duotone"
-                            class="search-widget-icon"
-                        ></iconify-icon>
+                        <input type="search" class="form-control" placeholder="Search..." autocomplete="off" value="" />
+                        <iconify-icon icon="iconamoon:search-duotone" class="search-widget-icon"></iconify-icon>
                     </div>
                 </form>
             </div>
@@ -31,15 +28,17 @@
 
                 <!-- User -->
                 <div class="dropdown topbar-item">
-                    <a type="button" class="topbar-button" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="topbar-button" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <span class="d-flex align-items-center">
-                            <img class="rounded-circle" width="32"  src="{{ url('assets/images/users/dummy-avatar.jpg') }}" alt="avatar-3"/>
+                            <img class="rounded-circle" width="32"
+                                src="{{ url('assets/images/users/dummy-avatar.jpg') }}" alt="avatar-3" />
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        <h6 class="dropdown-header">Selamt Datang User!</h6>
-                        <a class="dropdown-item" href="pages-profile.php">
+                        <h6 class="dropdown-header">Selamat Datang User!</h6>
+                        <a class="dropdown-item" href="{{ route('profile') }}">
                             <i class="bx bx-user-circle text-muted fs-18 align-middle me-1"></i>
                             <span class="align-middle">Profile</span>
                         </a>

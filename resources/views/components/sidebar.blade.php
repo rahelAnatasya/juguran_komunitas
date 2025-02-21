@@ -1,19 +1,19 @@
 <div class="main-nav">
     <!-- Sidebar Logo -->
     <div class="logo-box">
-        <a href="index.php" class="logo-dark">
-            <img src="{{ url('assets/images/logo/icon-juguran-komunitas.png') }}" class="logo-sm" alt="logo sm"/>
+        <a href="{{ route("homepage") }}" class="logo-dark">
+            <img src="{{ url('assets/images/logo/icon-juguran-komunitas.png') }}" class="logo-sm" alt="logo sm" />
             <span class="logo-lg fw-bold align-middle" style="color: #0d47a1;">Juguran Komunitas</span>
         </a>
 
-        <a href="index.php" class="logo-light">
-            <img src="{{ url('assets/images/logo/icon-juguran-komunitas.png') }}" class="logo-sm" alt="logo sm"/>
+        <a href="{{ route("homepage") }}" class="logo-light">
+            <img src="{{ url('assets/images/logo/icon-juguran-komunitas.png') }}" class="logo-sm" alt="logo sm" />
             <span class="logo-lg fw-bold align-middle" style="color: #0d47a1;">Juguran Komunitas</span>
         </a>
     </div>
 
     <!-- Menu Toggle Button (sm-hover) -->
-    <button type="button" class="button-sm-hover"  aria-label="Show Full Sidebar">
+    <button type="button" class="button-sm-hover" aria-label="Show Full Sidebar">
         <iconify-icon icon="iconamoon:arrow-left-4-square-duotone" class="button-sm-hover-icon"></iconify-icon>
     </button>
 
@@ -22,11 +22,10 @@
             <li class="menu-title">General</li>
 
             <li class="nav-item">
-                <a class="nav-link menu-arrow" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                <a class="nav-link menu-arrow" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="sidebarDashboards">
                     <span class="nav-icon">
-                        <iconify-icon
-                            icon="iconamoon:home-duotone"
-                        ></iconify-icon>
+                        <iconify-icon icon="iconamoon:home-duotone"></iconify-icon>
                     </span>
                     <span class="nav-text"> Dashboard </span>
                 </a>
@@ -49,9 +48,25 @@
                     <span class="nav-text"> Semua Acara </span>
                 </a>
             </li>
-
-            <li class="menu-title">akun</li>
-
+            <li class="nav-item">
+                <a class="nav-link menu-arrow" href="#yourEvent" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="yourEvent">
+                    <span class="nav-icon">
+                        <iconify-icon icon="iconamoon:home-duotone"></iconify-icon>
+                    </span>
+                    <span class="nav-text">Acara </span>
+                </a>
+                <div class="collapse" id="yourEvent">
+                    <ul class="nav sub-navbar-nav">
+                        <li class="sub-nav-item">
+                            <a class="sub-nav-link" href="{{ route('your-event') }}">Daftar Acara</a>
+                        </li>
+                        <li class="sub-nav-item">
+                            <a class="sub-nav-link" href="{{ route('your-event') }}">Acara Diikuti</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link text-danger" href="apps-chat.php">
                     <span class="nav-icon">

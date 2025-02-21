@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Event\EventController;
@@ -31,3 +32,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/event', [EventController::class, 'index'])->name('event');
 // ===== Your Event =====
 Route::get('/your-event', [YourEventController::class, 'index'])->name('your-event');
+
+// ===== Profile =====
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
