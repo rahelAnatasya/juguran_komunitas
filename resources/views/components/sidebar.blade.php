@@ -59,10 +59,10 @@
                 <div class="collapse" id="yourEvent">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('your-event') }}">Daftar Acara</a>
+                            <a class="sub-nav-link" href="{{ route('your-event') }}">Your Event</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('your-event') }}">Acara Diikuti</a>
+                            <a class="sub-nav-link" href="{{ route('joined') }}">Joined</a>
                         </li>
                     </ul>
                 </div>

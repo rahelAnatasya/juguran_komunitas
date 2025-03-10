@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Event\JoinedEventController;
 use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -35,3 +36,4 @@ Route::get('/your-event', [YourEventController::class, 'index'])->name('your-eve
 
 // ===== Profile =====
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/joined', [JoinedEventController::class, 'index'])->name('joined');
