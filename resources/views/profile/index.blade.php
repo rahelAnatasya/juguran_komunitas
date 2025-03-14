@@ -87,27 +87,19 @@
         </div>
         </div>
 
-        <div class="row mt-4">
-        <div class="col-md-3 mb-3">
-          <a href="#" class="btn btn-primary px-4 py-2" data-aos="fade-up" data-aos-delay="400">
+        <div class="d-flex flex-column flex-md-row col-gap-5 justify-content-between mt-4 gap-2 ">
+        <a href="#" class="btn btn-primary w-100 px-4 py-2">
           Change Profile Data
-          </a>
-        </div>
-        <div class="col-md-3 mb-3">
-          <a href="#" class="btn btn-primary px-4 py-2" data-aos="fade-up" data-aos-delay="500">
+        </a>
+        <a href="#" class="btn btn-primary w-100 px-4 py-2">
           Change Email
-          </a>
-        </div>
-        <div class="col-md-3 mb-3">
-          <a href="#" class="btn btn-primary px-4 py-2" data-aos="fade-up" data-aos-delay="600">
+        </a>
+        <a href="#" class="btn btn-primary w-100  px-4 py-2">
           Change Password
-          </a>
-        </div>
-        <div class="col-md-3 mb-3">
-          <button class="btn btn-danger px-4 py-2" data-aos="fade-up" data-aos-delay="700">
+        </a>
+        <button class="btn btn-danger w-100 px-4 py-2">
           Delete Account
-          </button>
-        </div>
+        </button>
         </div>
       </div>
       </div>

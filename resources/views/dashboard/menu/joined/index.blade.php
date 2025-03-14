@@ -60,6 +60,19 @@
                                     <th class="border-0 py-2"></th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Bootcamp C++</td>
+                                    <td>5 Mei 2025</td>
+                                    <td>Jalan Ambarukmo, Yogyakarta</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Pelatihan Laravel</td>
+                                    <td>19 Mei 2025</td>
+                                    <td>Jalan Wonosari, Yogyakarta</td>
+                            </tbody>
                         </table>
                     </div>
 
@@ -308,30 +321,30 @@
 
                     // Tombol Previous
                     paginationHtml += `
-                    <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                        <a href="#" class="page-link" data-page="prev">
-                            <i class="bx bx-left-arrow-alt"></i>
-                        </a>
-                    </li>
-                `;
+                                                            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                                                                <a href="#" class="page-link" data-page="prev">
+                                                                    <i class="bx bx-left-arrow-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                        `;
 
                     // Logika untuk membatasi tampilan halaman
                     if (totalPages <= 5) {
                         // Tampilkan semua halaman jika totalPages <= 5
                         for (let i = 1; i <= totalPages; i++) {
                             paginationHtml += `
-                            <li class="page-item ${i === currentPage ? 'active' : ''}">
-                                <a href="#" class="page-link" data-page="${i}">${i}</a>
-                            </li>
-                        `;
+                                                                    <li class="page-item ${i === currentPage ? 'active' : ''}">
+                                                                        <a href="#" class="page-link" data-page="${i}">${i}</a>
+                                                                    </li>
+                                                                `;
                         }
                     } else {
                         // Halaman pertama
                         paginationHtml += `
-                        <li class="page-item ${1 === currentPage ? 'active' : ''}">
-                            <a href="#" class="page-link" data-page="1">1</a>
-                        </li>
-                    `;
+                                                                <li class="page-item ${1 === currentPage ? 'active' : ''}">
+                                                                    <a href="#" class="page-link" data-page="1">1</a>
+                                                                </li>
+                                                            `;
 
                         if (currentPage > 3) {
                             paginationHtml += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
@@ -343,10 +356,10 @@
 
                         for (let i = start; i <= end; i++) {
                             paginationHtml += `
-                            <li class="page-item ${i === currentPage ? 'active' : ''}">
-                                <a href="#" class="page-link" data-page="${i}">${i}</a>
-                            </li>
-                        `;
+                                                                    <li class="page-item ${i === currentPage ? 'active' : ''}">
+                                                                        <a href="#" class="page-link" data-page="${i}">${i}</a>
+                                                                    </li>
+                                                                `;
                         }
 
                         if (currentPage < totalPages - 2) {
@@ -355,20 +368,20 @@
 
                         // Halaman terakhir
                         paginationHtml += `
-                        <li class="page-item ${totalPages === currentPage ? 'active' : ''}">
-                            <a href="#" class="page-link" data-page="${totalPages}">${totalPages}</a>
-                        </li>
-                    `;
+                                                                <li class="page-item ${totalPages === currentPage ? 'active' : ''}">
+                                                                    <a href="#" class="page-link" data-page="${totalPages}">${totalPages}</a>
+                                                                </li>
+                                                            `;
                     }
 
                     // Tombol Next
                     paginationHtml += `
-                    <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-                        <a href="#" class="page-link" data-page="next">
-                            <i class="bx bx-right-arrow-alt"></i>
-                        </a>
-                    </li>
-                `;
+                                                            <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                                                                <a href="#" class="page-link" data-page="next">
+                                                                    <i class="bx bx-right-arrow-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                        `;
 
                     $('#custom-pagination').html(paginationHtml);
                 }
