@@ -37,7 +37,7 @@
               style="width: fit-content" href="{{route('homepage')}}">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color-primary fw-semibold" href="#">Event</a>
+            <a class="nav-link color-primary fw-semibold" href="/#event">Event</a>
           </li>
           <li class="nav-item">
             <a class="button-hover btn py-2 px-4 bg-primary text-white fw-bold" href="{{route('login')}}">Masuk</a>

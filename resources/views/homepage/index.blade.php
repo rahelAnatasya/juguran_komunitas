@@ -62,9 +62,8 @@
             </div>
         </div>
     </section>
-
     <!-- Events Section -->
-    <section class="py-5">
+    <section id="event" class="py-5 ">
         <div class="container ">
             <div class="row mx-1 align-items-center mb-4">
                 <div class="col-12 col-lg">
