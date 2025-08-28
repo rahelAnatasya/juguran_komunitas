@@ -11,17 +11,18 @@ use App\Http\Requests\RegisterRequest;
 class RegisterController extends Controller
 {
 
-    public function index(){
+    public function index()
+    {
         return view('auth.register', [
             'title' => 'Register'
         ]);
     }
 
 
-    public function store(RegisterRequest $request){
+    public function store(RegisterRequest $request)
+    {
         $data = $request->validated();
-        $user = User::create($data);
-        Auth::login($user);
-        return redirect()->route('dashboard')->with('success', 'Registrasi Berhasil');
+        User::create($data);
+        return redirect()->route('login')->with('success', 'Registrasi Berhasil');
     }
 }
