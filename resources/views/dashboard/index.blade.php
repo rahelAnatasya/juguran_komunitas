@@ -78,8 +78,10 @@
                                     <td>{{ $event->getFormattedDateRange() }}</td>
                                     <td>{!! $event->getStatusBadge() !!}</td>
                                     <td>
+                                        @can('update', $event)
                                         <a href="{{ route('your-event.edit', $event->id) }}"
                                             class="btn btn-sm btn-outline-primary">Edit</a>
+                                        @endcan
                                         <a href="{{ route('your-event.show', $event->id) }}"
                                             class="btn btn-sm btn-outline-info">Detail</a>
                                     </td>
@@ -132,8 +134,10 @@
                                     <td>{{ $event->getFormattedDateRange() }}</td>
                                     <td>{!! $event->getStatusBadge() !!}</td>
                                     <td>
+                                        @can('update', $event)
                                         <a href="{{ route('your-event.edit', $event->id) }}"
                                             class="btn btn-sm btn-outline-primary">Edit</a>
+                                        @endcan
                                         <a href="{{ route('your-event.show', $event->id) }}"
                                             class="btn btn-sm btn-outline-info">Detail</a>
                                     </td>
@@ -185,8 +189,10 @@
                                     <td>{{ $event->getFormattedDateRange() }}</td>
                                     <td>{!! $event->getStatusBadge() !!}</td>
                                     <td>
+                                        @can('update', $event)
                                         <a href="{{ route('your-event.edit', $event->id) }}"
                                             class="btn btn-sm btn-outline-primary">Edit</a>
+                                        @endcan
                                         <a href="{{ route('your-event.show', $event->id) }}"
                                             class="btn btn-sm btn-outline-info">Detail</a>
                                     </td>

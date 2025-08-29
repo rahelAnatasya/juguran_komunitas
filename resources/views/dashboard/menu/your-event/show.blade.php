@@ -91,7 +91,9 @@
 
                     <div class="col-12">
                         <div class="d-flex gap-2">
+                            @can('update', $event)
                             <a href="{{ route('your-event.edit', $event->id) }}" class="btn btn-primary">Edit</a>
+                            @endcan
                             <a href="{{ route('your-event') }}" class="btn btn-secondary">Kembali ke Daftar</a>
                         </div>
                     </div>

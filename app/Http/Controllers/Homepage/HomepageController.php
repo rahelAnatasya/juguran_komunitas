@@ -16,6 +16,7 @@ class HomepageController extends Controller
             ->get()
             ->map(function ($event) {
                 return [
+                    'id' => $event->id,
                     'title' => $event->title,
                     'date' => $event->getFormattedDateRange(),
                     'location' => $event->name_location,
@@ -54,8 +55,16 @@ class HomepageController extends Controller
             'features' => $features,
         ]);
     }
-    public function detail()
+    public function detail(Event $event)
     {
-        return view('homepage.detail');
+        // Validasi bahwa event aktif
+        if ($event->status !== 'active') {
+            abort(404);
+        }
+
+        return view('homepage.detail', [
+            'title' => $event->title,
+            'event' => $event
+        ]);
     }
 }

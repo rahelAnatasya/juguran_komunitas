@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
@@ -10,6 +11,8 @@ class Event extends Model
         'title',
         'from_date',
         'to_date',
+        'start_time',
+        'end_time',
         'name_location',
         'link_location',
         'description',
@@ -24,6 +27,8 @@ class Event extends Model
     protected $casts = [
         'from_date' => 'date',
         'to_date' => 'date',
+        'start_time' => 'datetime:H:i',
+        'end_time' => 'datetime:H:i',
     ];
 
     public function user()
@@ -40,7 +45,7 @@ class Event extends Model
     {
         $now = now();
         return $this->from_date <= $now &&
-               ($this->to_date === null || $this->to_date >= $now);
+            ($this->to_date === null || $this->to_date >= $now);
     }
 
     public function isCompleted()
@@ -66,12 +71,12 @@ class Event extends Model
     public function getFormattedDateRange()
     {
         $fromDate = $this->from_date->format('d M Y');
-        
+
         if ($this->to_date) {
             $toDate = $this->to_date->format('d M Y');
             return "{$fromDate} - {$toDate}";
         }
-        
+
         return $fromDate;
     }
 
@@ -81,6 +86,23 @@ class Event extends Model
             return asset('storage/' . $this->image_path);
         }
         return null;
+    }
+
+    public function getFormattedTimeRange()
+    {
+        if ($this->start_time && $this->end_time) {
+            $start = Carbon::parse($this->start_time)->format('H:i');
+            $end = Carbon::parse($this->end_time)->format('H:i');
+            return "{$start} - {$end} WIB";
+        } elseif ($this->start_time) {
+            return Carbon::parse($this->start_time)->format('H:i') . ' WIB';
+        }
+        return 'Waktu belum ditentukan';
+    }
+
+    public function getEventUrl()
+    {
+        return route('homepage.detail', $this->id);
     }
 
     public function getStatusText()

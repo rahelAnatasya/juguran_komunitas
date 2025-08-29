@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Gate;
 
 class YourEventController extends Controller
 {
@@ -31,6 +32,8 @@ class YourEventController extends Controller
             'title' => 'required|string|max:255',
             'from_date' => 'required|date',
             'to_date' => 'nullable|date|after_or_equal:from_date',
+            'start_time' => 'nullable|date_format:H:i',
+            'end_time' => 'nullable|date_format:H:i|after_or_equal:start_time',
             'name_location' => 'required|string|max:255',
             'link_location' => 'required|url',
             'description' => 'required|string',
@@ -56,6 +59,9 @@ class YourEventController extends Controller
 
     public function show(Event $event)
     {
+        // Authorize user can view this event
+        Gate::authorize('view', $event);
+
         return view('dashboard.menu.your-event.show', [
             'title' => 'Detail Acara',
             'event' => $event
@@ -64,6 +70,9 @@ class YourEventController extends Controller
 
     public function edit(Event $event)
     {
+        // Authorize user can update this event
+        Gate::authorize('update', $event);
+
         return view('dashboard.menu.your-event.edit', [
             'title' => 'Edit Acara',
             'event' => $event
@@ -72,10 +81,15 @@ class YourEventController extends Controller
 
     public function update(Request $request, Event $event)
     {
+        // Authorize user can update this event
+        Gate::authorize('update', $event);
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'from_date' => 'required|date',
             'to_date' => 'nullable|date|after_or_equal:from_date',
+            'start_time' => 'nullable|date_format:H:i',
+            'end_time' => 'nullable|date_format:H:i|after_or_equal:start_time',
             'name_location' => 'required|string|max:255',
             'link_location' => 'required|url',
             'description' => 'required|string',
@@ -112,6 +126,9 @@ class YourEventController extends Controller
 
     public function destroy(Event $event)
     {
+        // Authorize user can delete this event
+        Gate::authorize('delete', $event);
+
         // Delete associated image
         if ($event->image_path) {
             Storage::disk('public')->delete($event->image_path);

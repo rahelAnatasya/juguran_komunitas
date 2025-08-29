@@ -51,6 +51,9 @@
               <div class="mb-1 mt-1 text-muted">
                 <i class="bx bx-calendar"></i> {{ $event->getFormattedDateRange() }}
               </div>
+              <div class="mb-1 text-muted">
+                <i class="bx bx-time"></i> {{ $event->getFormattedTimeRange() }}
+              </div>
               <div class="mb-2 text-muted">
                 <i class="bx bx-map"></i> {{ $event->name_location }}
               </div>

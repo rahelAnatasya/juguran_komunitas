@@ -48,8 +48,26 @@
                         </div>
 
                         <div class="col-md-6 mb-3">
+                            <label for="start_time" class="form-label">Waktu Mulai</label>
+                            <input type="time" id="start_time" name="start_time" class="form-control @error('start_time') is-invalid @enderror"
+                                   value="{{ old('start_time') }}">
+                            @error('start_time')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="end_time" class="form-label">Waktu Selesai</label>
+                            <input type="time" id="end_time" name="end_time" class="form-control @error('end_time') is-invalid @enderror"
+                                   value="{{ old('end_time') }}">
+                            @error('end_time')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6 mb-3">
                             <label for="name_location" class="form-label">Nama Lokasi <span class="text-danger">*</span></label>
-                            <input type="text" id="name_location" name="name_location" class="form-control @error('name_location') is-invalid @enderror" 
+                            <input type="text" id="name_location" name="name_location" class="form-control @error('name_location') is-invalid @enderror"
                                    placeholder="Masukkan nama lokasi" value="{{ old('name_location') }}" required>
                             @error('name_location')
                                 <div class="invalid-feedback">{{ $message }}</div>

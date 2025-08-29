@@ -81,13 +81,17 @@
                                             <div class="d-flex gap-2">
                                                 <a href="{{ route('your-event.show', $event->id) }}"
                                                     class="btn btn-sm btn-outline-info">Detail</a>
+                                                @can('update', $event)
                                                 <a href="{{ route('your-event.edit', $event->id) }}"
                                                     class="btn btn-sm btn-outline-primary">Edit</a>
+                                                @endcan
+                                                @can('delete', $event)
                                                 <button type="button" class="btn btn-sm btn-outline-danger"
                                                     data-bs-toggle="modal" data-bs-target="#hapusEventModal"
                                                     data-event-id="{{ $event->id }}" data-event-title="{{ $event->title }}">
                                                     <span class="align-middle">Hapus</span>
                                                 </button>
+                                                @endcan
                                             </div>
                                         </td>
                                     </tr>
