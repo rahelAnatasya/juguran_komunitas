@@ -17,7 +17,8 @@ class Event extends Model
         'status',
         'type',
         'mode',
-        'user_id'
+        'user_id',
+        'image_path'
     ];
 
     protected $casts = [
@@ -72,5 +73,28 @@ class Event extends Model
         }
         
         return $fromDate;
+    }
+
+    public function getImageUrl()
+    {
+        if ($this->image_path) {
+            return asset('storage/' . $this->image_path);
+        }
+        return null;
+    }
+
+    public function getStatusText()
+    {
+        if ($this->status === 'inactive') {
+            return 'Tidak Aktif';
+        } elseif ($this->isUpcoming()) {
+            return 'Akan Datang';
+        } elseif ($this->isOngoing()) {
+            return 'Sedang Berlangsung';
+        } elseif ($this->isCompleted()) {
+            return 'Selesai';
+        } else {
+            return 'Unknown';
+        }
     }
 }

@@ -8,10 +8,32 @@
                 <h5 class="card-title mb-0">Edit Acara</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('your-event.update', $event->id) }}" method="POST">
+                <form action="{{ route('your-event.update', $event->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="image" class="form-label">Gambar Acara</label>
+                            
+                            @if($event->image_path)
+                                <div class="mb-3">
+                                    <img src="{{ $event->getImageUrl() }}" alt="Gambar Acara" class="img-fluid rounded" style="max-height: 200px;">
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" name="remove_image" id="remove_image" value="1">
+                                        <label class="form-check-label text-danger" for="remove_image">
+                                            Hapus gambar saat ini
+                                        </label>
+                                    </div>
+                                </div>
+                            @endif
+                            
+                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror"
+                                   accept="image/*">
+                            <div class="form-text">Format yang didukung: JPEG, PNG, JPG, GIF. Maksimal 2MB.</div>
+                            @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <div class="col-md-6 mb-3">
                             <label for="title" class="form-label">Nama Acara <span class="text-danger">*</span></label>
                             <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" 

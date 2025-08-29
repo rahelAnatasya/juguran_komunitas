@@ -78,16 +78,16 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <div class="">
+                                            <div class="d-flex gap-2">
+                                                <a href="{{ route('your-event.show', $event->id) }}"
+                                                    class="btn btn-sm btn-outline-info">Detail</a>
                                                 <a href="{{ route('your-event.edit', $event->id) }}"
-                                                    class="btn btn-sm btn-outline-primary me-2">Edit</a>
-                                                <form action="{{ route('your-event.destroy', $event->id) }}" method="POST"
-                                                    class="d-inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus acara ini?')">Hapus</button>
-                                                </form>
+                                                    class="btn btn-sm btn-outline-primary">Edit</a>
+                                                <button type="button" class="btn btn-sm btn-outline-danger"
+                                                    data-bs-toggle="modal" data-bs-target="#hapusEventModal"
+                                                    data-event-id="{{ $event->id }}" data-event-title="{{ $event->title }}">
+                                                    <span class="align-middle">Hapus</span>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
@@ -106,5 +106,45 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="hapusEventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="hapusEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="hapusEventModalLabel">Hapus Event</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah anda yakin ingin menghapus event "<span id="eventTitle"></span>"?</p>
+                    <p class="text-danger"><small>Tindakan ini tidak dapat dibatalkan.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                    <form id="hapusEventForm" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hapusEventModal = document.getElementById('hapusEventModal');
+            hapusEventModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const eventId = button.getAttribute('data-event-id');
+                const eventTitle = button.getAttribute('data-event-title');
+
+                document.getElementById('eventTitle').textContent = eventTitle;
+
+                const form = document.getElementById('hapusEventForm');
+                form.action = "{{ route('your-event.destroy', '') }}/" + eventId;
+            });
+        });
+    </script>
 
 @endsection

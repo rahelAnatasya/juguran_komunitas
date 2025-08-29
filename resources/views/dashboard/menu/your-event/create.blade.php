@@ -8,9 +8,18 @@
                 <h5 class="card-title mb-0">Tambah Acara Baru</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('your-event.store') }}" method="POST">
+                <form action="{{ route('your-event.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="image" class="form-label">Gambar Acara</label>
+                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror"
+                                   accept="image/*">
+                            <div class="form-text">Format yang didukung: JPEG, PNG, JPG, GIF. Maksimal 2MB.</div>
+                            @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <div class="col-md-6 mb-3">
                             <label for="title" class="form-label">Nama Acara <span class="text-danger">*</span></label>
                             <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" 

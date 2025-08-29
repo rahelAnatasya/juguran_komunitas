@@ -4,55 +4,26 @@ namespace App\Http\Controllers\Homepage;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class HomepageController extends Controller
 {
     public function index()
     {
-        $events = [
-            [
-                'title' => 'Juguran Komunitas - Transform Your Design Skills',
-                'date' => 'Januari 25, 2025',
-                'location' => 'Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas',
-                'status' => 'Expired',
-                'image' => asset('assets/images/poster-januari-2025.jpg')
-            ],
-            [
-                'title' => 'Juguran Komunitas - Transform Your Design Skills',
-                'date' => 'Januari 25, 2025',
-                'location' => 'Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas',
-                'status' => 'Expired',
-                'image' => asset('assets/images/poster-januari-2025.jpg')
-            ],
-            [
-                'title' => 'Juguran Komunitas - Transform Your Design Skills',
-                'date' => 'Januari 25, 2025',
-                'location' => 'Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas',
-                'status' => 'Expired',
-                'image' => asset('assets/images/poster-januari-2025.jpg')
-            ],
-            [
-                'title' => 'Juguran Komunitas - Transform Your Design Skills',
-                'date' => 'Januari 25, 2025',
-                'location' => 'Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas',
-                'status' => '',
-                'image' => asset('assets/images/poster-januari-2025.jpg')
-            ],
-            [
-                'title' => 'Juguran Komunitas - Transform Your Design Skills',
-                'date' => 'Januari 25, 2025',
-                'location' => 'Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas',
-                'status' => '',
-                'image' => asset('assets/images/poster-januari-2025.jpg')
-            ],
-            [
-                'title' => 'Juguran Komunitas - Transform Your Design Skills',
-                'date' => 'Januari 25, 2025',
-                'location' => 'Warung Mulyo, Pabuaran, Purwokerto Utara, Banyumas',
-                'status' => '',
-                'image' => asset('assets/images/poster-januari-2025.jpg')
-            ],
-        ];
+        // Ambil event aktif dari database
+        $events = Event::where('status', 'active')
+            ->orderBy('from_date', 'desc')
+            ->get()
+            ->map(function ($event) {
+                return [
+                    'title' => $event->title,
+                    'date' => $event->getFormattedDateRange(),
+                    'location' => $event->name_location,
+                    'status' => $event->getStatusText(),
+                    'image' => $event->getImageUrl()
+                ];
+            })
+            ->toArray();
 
         $features = [
             [

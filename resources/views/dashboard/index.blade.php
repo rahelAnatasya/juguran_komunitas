@@ -80,7 +80,8 @@
                                     <td>
                                         <a href="{{ route('your-event.edit', $event->id) }}"
                                             class="btn btn-sm btn-outline-primary">Edit</a>
-                                        <a class="btn btn-sm btn-outline-info">Detail</a>
+                                        <a href="{{ route('your-event.show', $event->id) }}"
+                                            class="btn btn-sm btn-outline-info">Detail</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -133,7 +134,8 @@
                                     <td>
                                         <a href="{{ route('your-event.edit', $event->id) }}"
                                             class="btn btn-sm btn-outline-primary">Edit</a>
-                                        <a class="btn btn-sm btn-outline-info">Detail</a>
+                                        <a href="{{ route('your-event.show', $event->id) }}"
+                                            class="btn btn-sm btn-outline-info">Detail</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -185,7 +187,8 @@
                                     <td>
                                         <a href="{{ route('your-event.edit', $event->id) }}"
                                             class="btn btn-sm btn-outline-primary">Edit</a>
-                                        <a class="btn btn-sm btn-outline-info">Detail</a>
+                                        <a href="{{ route('your-event.show', $event->id) }}"
+                                            class="btn btn-sm btn-outline-info">Detail</a>
                                     </td>
                                 </tr>
                             @endforeach

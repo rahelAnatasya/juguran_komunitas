@@ -37,14 +37,29 @@ class YourEventController extends Controller
             'coupon_code' => 'nullable|string|max:50',
             'status' => 'required|in:active,inactive',
             'type' => 'required|in:online,offline',
-            'mode' => 'required|in:paid,free'
+            'mode' => 'required|in:paid,free',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         $validated['user_id'] = auth()->id();
 
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('events', 'public');
+            $validated['image_path'] = $imagePath;
+        }
+
         Event::create($validated);
 
         return redirect()->route('your-event')->with('success', 'Acara berhasil ditambahkan!');
+    }
+
+    public function show(Event $event)
+    {
+        return view('dashboard.menu.your-event.show', [
+            'title' => 'Detail Acara',
+            'event' => $event
+        ]);
     }
 
     public function edit(Event $event)
@@ -67,8 +82,28 @@ class YourEventController extends Controller
             'coupon_code' => 'nullable|string|max:50',
             'status' => 'required|in:active,inactive',
             'type' => 'required|in:online,offline',
-            'mode' => 'required|in:paid,free'
+            'mode' => 'required|in:paid,free',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+
+        // Handle image removal
+        if ($request->has('remove_image')) {
+            if ($event->image_path) {
+                Storage::disk('public')->delete($event->image_path);
+                $validated['image_path'] = null;
+            }
+        }
+
+        // Handle new image upload
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if ($event->image_path) {
+                Storage::disk('public')->delete($event->image_path);
+            }
+            
+            $imagePath = $request->file('image')->store('events', 'public');
+            $validated['image_path'] = $imagePath;
+        }
 
         $event->update($validated);
 
@@ -77,6 +112,11 @@ class YourEventController extends Controller
 
     public function destroy(Event $event)
     {
+        // Delete associated image
+        if ($event->image_path) {
+            Storage::disk('public')->delete($event->image_path);
+        }
+
         $event->delete();
 
         return redirect()->route('your-event')->with('success', 'Acara berhasil dihapus!');

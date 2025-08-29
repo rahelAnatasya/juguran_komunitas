@@ -102,10 +102,11 @@
                                     class="w-100 object-fit-cover position-relative overflow-hidden d-flex justify-content-center align-items-center">
                                     @if(isset($event['status']) && !empty($event['status']))
                                         <span
-                                            class="text-uppercase position-absolute bg-primary-dark m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">{{ $event['status'] }}</span>
+                                            class="text-uppercase position-absolute bg-primary-dark z-3 m-3 px-3 rounded-3 py-2 top-0 start-0 fw-semibold text-white">{{ $event['status'] }}</span>
                                     @endif
-                                    <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover"
-                                        src="{{ asset($event['image']) }}" alt="Event Image" />
+                                    <img class="card-img-top rounded-0 h-100 w-100 object-fit-cover" style="max-height: 400px;"
+                                        src="{{ asset($event['image']) }}" alt="Event Image"
+                                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'card-img-top bg-light d-flex align-items-center justify-content-center\' style=\'height: 400px;\' data-aos=\'zoom-in\' data-aos-delay=\'300\'><i class=\'bx bx-image text-muted\' style=\'font-size: 3rem;\'></i></div>'" />
                                 </div>
                                 <div class="d-flex p-3 flex-column gap-2">
                                     <h5 class="card-title font-20-700 text-uppercase">
