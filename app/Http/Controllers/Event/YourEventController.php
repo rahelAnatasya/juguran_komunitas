@@ -11,8 +11,7 @@ class YourEventController extends Controller
 {
     public function index()
     {
-        $events = Event::latest()->get();
-
+        $events = Event::where('user_id', auth()->id())->get();
         return view('dashboard.menu.your-event.index', [
             'title' => 'Acara Kamu',
             'events' => $events
@@ -40,6 +39,8 @@ class YourEventController extends Controller
             'type' => 'required|in:online,offline',
             'mode' => 'required|in:paid,free'
         ]);
+
+        $validated['user_id'] = auth()->id();
 
         Event::create($validated);
 

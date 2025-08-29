@@ -28,17 +28,18 @@ Route::get('/detail', [HomepageController::class, 'detail'])->name('homepage.det
 
 // =============== Admin Menu ===============
 // ===== Dashboard =====
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
 // ===== Event =====
 Route::get('/event', [EventController::class, 'index'])->name('event');
 // ===== Your Event =====
-Route::get('/your-event', [YourEventController::class, 'index'])->name('your-event');
-Route::get('/your-event/create', [YourEventController::class, 'create'])->name('your-event.create');
-Route::post('/your-event', [YourEventController::class, 'store'])->name('your-event.store');
-Route::get('/your-event/{event}/edit', [YourEventController::class, 'edit'])->name('your-event.edit');
-Route::put('/your-event/{event}', [YourEventController::class, 'update'])->name('your-event.update');
-Route::delete('/your-event/{event}', [YourEventController::class, 'destroy'])->name('your-event.destroy');
+Route::get('/your-event', [YourEventController::class, 'index'])->name('your-event')->middleware('auth');
+Route::get('/your-event/create', [YourEventController::class, 'create'])->name('your-event.create')->middleware('auth');
+Route::post('/your-event', [YourEventController::class, 'store'])->name('your-event.store')->middleware('auth');
+Route::get('/your-event/{event}/edit', [YourEventController::class, 'edit'])->name('your-event.edit')->middleware('auth');
+Route::put('/your-event/{event}', [YourEventController::class, 'update'])->name('your-event.update')->middleware('auth');
+Route::delete('/your-event/{event}', [YourEventController::class, 'destroy'])->name('your-event.destroy')->middleware('auth');
 
 // ===== Profile =====
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/joined', [JoinedEventController::class, 'index'])->name('joined');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::get('/joined', [JoinedEventController::class, 'index'])->name('joined')->middleware('auth');

@@ -39,13 +39,20 @@
           <li class="nav-item">
             <a class="nav-link color-primary fw-semibold" href="/#event">Event</a>
           </li>
-          <li class="nav-item">
-            <a class="button-hover btn py-2 px-4 bg-primary text-white fw-bold" href="{{route('login')}}">Masuk</a>
-          </li>
-          <li class="nav-item">
-            <a class="button-hover btn py-2 px-4 bg-primary-dark text-white fw-bold"
-              href="{{route('register')}}">Daftar</a>
-          </li>
+          @auth
+            <li class="nav-item">
+              <a class="button-hover btn py-2 px-4 bg-primary text-white fw-bold"
+                href="{{route('dashboard')}}">Dashboard</a>
+            </li>
+          @else
+            <li class="nav-item">
+              <a class="button-hover btn py-2 px-4 bg-primary text-white fw-bold" href="{{route('login')}}">Masuk</a>
+            </li>
+            <li class="nav-item">
+              <a class="button-hover btn py-2 px-4 bg-primary-dark text-white fw-bold"
+                href="{{route('register')}}">Daftar</a>
+            </li>
+          @endauth
         </ul>
       </div>
     </div>

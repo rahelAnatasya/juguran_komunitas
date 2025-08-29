@@ -16,11 +16,17 @@ class Event extends Model
         'coupon_code',
         'status',
         'type',
-        'mode'
+        'mode',
+        'user_id'
     ];
 
     protected $casts = [
         'from_date' => 'date',
         'to_date' => 'date',
     ];
+
+    public function event()
+    {
+        $this->belongsTo(User::class);
+    }
 }

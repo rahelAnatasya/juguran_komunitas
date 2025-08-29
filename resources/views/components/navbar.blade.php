@@ -44,13 +44,39 @@
                         </a>
                         <div class="dropdown-divider my-1"></div>
 
-                        <a class="dropdown-item text-danger" href="{{ route('logout') }}">
+                        <!-- <a class="dropdown-item text-danger" href="{{ route('logout') }}">
                             <i class="bx bx-log-out fs-18 align-middle me-1"></i>
                             <span class="align-middle">Keluar</span>
-                        </a>
+                        </a> -->
+
+                        <button type="button" class="dropdown-item text-danger" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            <i class="bx bx-log-out fs-18 align-middle me-1"></i>
+                            <span class="align-middle">Keluar</span>
+                        </button>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                Apakah anda yakin ingin keluar?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{{ route('logout') }}" class="btn btn-danger">Ya</a>
+            </div>
+        </div>
+    </div>
+</div>
