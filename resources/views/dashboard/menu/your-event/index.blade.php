@@ -45,9 +45,9 @@
                             <span><i class="bx bx-search-alt"></i></span>
                             <input type="search" class="form-control" id="search" placeholder="Cari" />
                         </div>
-                    <div>
-                        <a href="{{ route('your-event.create') }}" class="btn btn-success">Buat Acara Kamu</a>
-                    </div>
+                        <div>
+                            <a href="{{ route('your-event.create') }}" class="btn btn-success">Buat Acara Kamu</a>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -65,37 +65,42 @@
                             </thead>
                             <tbody>
                                 @foreach($events as $index => $event)
-                                <tr>
-                                    <td>{{ $index + 1 }}</td>
-                                    <td>{{ $event->title }}</td>
-                                    <td>{{ $event->from_date->format('d M Y') }}@if($event->to_date) - {{ $event->to_date->format('d M Y') }}@endif</td>
-                                    <td>{{ $event->name_location }}</td>
-                                    <td>
-                                        <span class="badge bg-{{ $event->status == 'active' ? 'success' : 'secondary' }}">
-                                            {{ $event->status == 'active' ? 'Aktif' : 'Tidak Aktif' }}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{ route('your-event.edit', $event->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                            <form action="{{ route('your-event.destroy', $event->id) }}" method="POST" class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus acara ini?')">Hapus</button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $event->title }}</td>
+                                        <td>{{ $event->from_date->format('d M Y') }}@if($event->to_date) -
+                                        {{ $event->to_date->format('d M Y') }}@endif
+                                        </td>
+                                        <td>{{ $event->name_location }}</td>
+                                        <td>
+                                            <span class="badge bg-{{ $event->status == 'active' ? 'success' : 'secondary' }}">
+                                                {{ $event->status == 'active' ? 'Aktif' : 'Tidak Aktif' }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="">
+                                                <a href="{{ route('your-event.edit', $event->id) }}"
+                                                    class="btn btn-sm btn-outline-primary me-2">Edit</a>
+                                                <form action="{{ route('your-event.destroy', $event->id) }}" method="POST"
+                                                    class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus acara ini?')">Hapus</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
 
                     @if($events->isEmpty())
-                    <div class="text-center py-4">
-                        <p class="text-muted">Belum ada acara yang dibuat.</p>
-                        <a href="{{ route('your-event.create') }}" class="btn btn-success">Buat Acara Pertama</a>
-                    </div>
+                        <div class="text-center py-4">
+                            <p class="text-muted">Belum ada acara yang dibuat.</p>
+                            <a href="{{ route('your-event.create') }}" class="btn btn-success">Buat Acara Pertama</a>
+                        </div>
                     @endif
                 </div>
             </div>

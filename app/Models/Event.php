@@ -25,8 +25,52 @@ class Event extends Model
         'to_date' => 'date',
     ];
 
-    public function event()
+    public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function isUpcoming()
+    {
+        return $this->from_date > now();
+    }
+
+    public function isOngoing()
+    {
+        $now = now();
+        return $this->from_date <= $now &&
+               ($this->to_date === null || $this->to_date >= $now);
+    }
+
+    public function isCompleted()
+    {
+        return $this->to_date !== null && $this->to_date < now();
+    }
+
+    public function getStatusBadge()
+    {
+        if ($this->status === 'inactive') {
+            return '<span class="badge bg-danger">Tidak Aktif</span>';
+        } elseif ($this->isUpcoming()) {
+            return '<span class="badge bg-warning">Akan Datang</span>';
+        } elseif ($this->isOngoing()) {
+            return '<span class="badge bg-success">Sedang Berlangsung</span>';
+        } elseif ($this->isCompleted()) {
+            return '<span class="badge bg-secondary">Selesai</span>';
+        } else {
+            return '<span class="badge bg-info">Unknown</span>';
+        }
+    }
+
+    public function getFormattedDateRange()
+    {
+        $fromDate = $this->from_date->format('d M Y');
+        
+        if ($this->to_date) {
+            $toDate = $this->to_date->format('d M Y');
+            return "{$fromDate} - {$toDate}";
+        }
+        
+        return $fromDate;
     }
 }
