@@ -33,11 +33,11 @@
       <div class="offcanvas-body">
         <ul class="ms-3 navbar-nav gap-2 text-center text-lg-start">
           <li class="nav-item">
-            <a class="nav-link color-primary fw-semibold border-bottom mx-auto border-3 color-primary-dark"
-              style="width: fit-content" href="{{route('homepage')}}">Beranda</a>
+            <a class="nav-link color-primary fw-semibold" style="width: fit-content" href="{{route('homepage')}}"
+              id="beranda-nav-link">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color-primary fw-semibold" href="/#event">Event</a>
+            <a class="nav-link color-primary fw-semibold" href="/#event" id="event-nav-link">Event</a>
           </li>
           @auth
             <li class="nav-item">
@@ -58,3 +58,31 @@
     </div>
   </div>
 </nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateNavActive() {
+      const berandaNavLink = document.getElementById('beranda-nav-link');
+      const eventNavLink = document.getElementById('event-nav-link');
+      const hash = window.location.hash;
+      const currentPath = window.location.pathname;
+
+      berandaNavLink.classList.remove('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
+      eventNavLink.classList.remove('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
+
+      if (currentPath === '/') {
+        if (hash === '#event') {
+          eventNavLink.classList.add('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
+        } else {
+          berandaNavLink.classList.add('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
+        }
+      }
+    }
+
+    updateNavActive();
+
+    window.addEventListener('hashchange', updateNavActive);
+
+    window.addEventListener('load', updateNavActive);
+  });
+</script>

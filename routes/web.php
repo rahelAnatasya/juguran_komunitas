@@ -43,4 +43,7 @@ Route::delete('/your-event/{event}', [YourEventController::class, 'destroy'])->n
 
 // ===== Profile =====
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::get('/joined', [JoinedEventController::class, 'index'])->name('joined')->middleware('auth');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+Route::post('/profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password')->middleware('auth');
+Route::delete('/profile/delete-account', [ProfileController::class, 'deleteAccount'])->name('profile.delete-account')->middleware('auth');
+// Route::get('/joined', [JoinedEventController::class, 'index'])->name('joined')->middleware('auth');

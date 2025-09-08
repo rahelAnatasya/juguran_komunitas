@@ -1,0 +1,12 @@
+- [ ] search navbar
+- [ ] search di event
+- [ ] filter di event
+- [ ] perbaiki search di dashboard dan your event
+
+- [x] tampilan gambar event
+- [x] menu delete account
+- [x] menu ganti password
+- [x] tulisan dashboard di pojok kanan hapus
+- [x] total acara di /profile
+- [x] hapus menu joined
+- [x] hapus button change email

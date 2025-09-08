@@ -60,9 +60,9 @@
                         <li class="sub-nav-item">
                             <a class="sub-nav-link" href="{{ route('your-event') }}">Your Event</a>
                         </li>
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('joined') }}">Joined</a>
-                        </li>
+                        <!-- <li class="sub-nav-item">
+                            <a class="sub-nav-link" href="">Joined</a>
+                        </li> -->
                     </ul>
                 </div>
             </li>
