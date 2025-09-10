@@ -23,6 +23,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // =============== HomePage ===============
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
+Route::get('/allevents', [HomepageController::class, 'allEvents'])->name('homepage.all-events');
+Route::get('/allevents/search', [HomepageController::class, 'allEventsSearch'])->name('homepage.all-events-search');
+Route::get('/search', [HomepageController::class, 'search'])->name('homepage.search');
 Route::get('/detail/{event}', [HomepageController::class, 'detail'])->name('homepage.detail');
 
 
@@ -32,6 +35,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 // ===== Event =====
 Route::get('/event', [EventController::class, 'index'])->name('event')->middleware('auth');
+Route::get('/event/search', [EventController::class, 'search'])->name('event.search')->middleware('auth');
 // ===== Your Event =====
 Route::get('/your-event', [YourEventController::class, 'index'])->name('your-event')->middleware('auth');
 Route::get('/your-event/create', [YourEventController::class, 'create'])->name('your-event.create')->middleware('auth');

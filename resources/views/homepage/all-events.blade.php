@@ -3,73 +3,17 @@
 @section('content')
 
     <!-- Hero Section -->
-    <div data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" class="container py-1 pt-5 mt-5">
-        <div class="row mx-1 mx-md-4 pt-5 pt-lg-3 align-items-center">
-            <div class="col-12 col-lg-6 d-flex flex-column gap-2">
-                <p class="m-0 font-hashtag">#RuangBersama</p>
-                <h1 class="hero-title">
-                    Merajut Kebersamaan, <br />Berbagi Cerita Komunitas
-                </h1>
-                <p class="text-blac font-17-500 text-opacity-75">
-                    Selamat Datang di Juguran Komunitas - Ruang berbagi, inspirasi, dan
-                    kolaborasi untuk menciptakan perubahan positif bersama!
-                </p>
-                <div>
-                    <a href="#"
-                        class="button-hover btn bg-primary-dark hero-cta rounded-pill text-white fw-bold fs-6 btn-lg">Pelajari
-                        Lebih Lanjut
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0742 12L14.0742 18M20.0742 12L14.0742 6M20.0742 12H9.57416M4.07416 12H6.57416"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 mt-lg-2 px-1 col-lg-6">
-                <img class="w-100 object-fit-contain" style="max-height: 620px" src="{{ asset('assets/images/hero.png') }}"
-                    alt="" />
-            </div>
-        </div>
+    <div class="container py-1 pt-5 mt-5">
     </div>
 
-    <!-- Why Join Section -->
-    <section class="pt-5">
-        <div class="container d-grid gap-3 text-center">
-            <h1 class="m-0 fw-bold font-hashtag">Kenapa Harus Ikut Juguran Komunitas?</h1>
-            <p class="m-0 text-black text-opacity-75 font-subtitle">
-                Jadikan setiap pertemuan sebagai kesempatan untuk berbagi, belajar,
-                dan tumbuh bersama
-            </p>
-
-            <div class="row mx-auto" style="max-width: 1048px">
-                @foreach($features as $key => $feature)
-                    <div class="col-lg-3 col-6 py-2" data-aos="fade-up" data-aos-delay="{{ $key * 100 }}"
-                        data-aos-duration="1000" data-aos-offset="100" data-aos-anchor-placement="bottom-bottom">
-                        <div class="card-hover bg-primary text-white rounded-4 py-2 px-3 h-100">
-                            <div class="h-100 justify-content-between gap-2 py-0">
-                                <div class="py-md-3 mb-2" style="min-height: 50px;">
-                                    <img src="{{ asset($feature['icon']) }}" width="51" height="50"
-                                        alt="{{ $feature['title'] }} Icon">
-                                </div>
-                                <h3 class="feature-title text-wrap">{{ $feature['title'] }}</h3>
-                                <p class="font-sm-small">
-                                    {{ $feature['description'] }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
     <!-- Events Section -->
     <section id="event" class="py-5 ">
         <div class="container ">
             <div class="row mx-1 align-items-center mb-4">
                 <div class="col-12 col-lg">
-                    <h1 class="m-0 fw-bold font-hashtag">{{ $sectionTitle }}</h1>
+                    <h1 class="m-0 fw-bold font-hashtag">{{ $title }}</h1>
                     <p class="text-opacity-75 pt-2 text-black font-subtitle">
-                        Ikuti acara menarik yang akan datang dan dapatkan pengalaman baru
+                        Jelajahi semua acara menarik yang akan datang dan dapatkan pengalaman baru
                     </p>
                 </div>
                 <div class="col-12 col-lg">
@@ -77,7 +21,7 @@
                         <form action="{{ route('homepage.all-events-search') }}" method="GET"
                             class="col col-lg-auto overflow-hidden px-1 d-flex ms-lg-auto flex-grow-1 flex-lg-grow-0 align-items-center border border-3 rounded-4"
                             style="height: fit-content;">
-                            <input type="hidden" name="filter" value="all">
+                            <input type="hidden" name="filter" value="{{ $currentFilter ?? 'all' }}">
                             <input style="outline: 0;" class="border-0 px-3 py-2 w-100 fs-6" type="text" name="q"
                                 placeholder="Search" value="{{ $searchQuery ?? '' }}" />
                             <button type="submit"
@@ -93,10 +37,10 @@
                                         alt="Filter Icon" />
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item {{ $currentFilter === 'all' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'all']) }}">Semua Acara</a></li>
-                                    <li><a class="dropdown-item {{ $currentFilter === 'upcoming' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'upcoming']) }}">Akan Datang</a></li>
-                                    <li><a class="dropdown-item {{ $currentFilter === 'ongoing' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'ongoing']) }}">Sedang Berlangsung</a></li>
-                                    <li><a class="dropdown-item {{ $currentFilter === 'completed' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'completed']) }}">Selesai</a></li>
+                                    <li><a class="dropdown-item {{ ($currentFilter ?? 'all') === 'all' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'all']) }}">Semua Acara</a></li>
+                                    <li><a class="dropdown-item {{ ($currentFilter ?? 'all') === 'upcoming' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'upcoming']) }}">Akan Datang</a></li>
+                                    <li><a class="dropdown-item {{ ($currentFilter ?? 'all') === 'ongoing' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'ongoing']) }}">Sedang Berlangsung</a></li>
+                                    <li><a class="dropdown-item {{ ($currentFilter ?? 'all') === 'completed' ? 'active' : '' }}" href="{{ route('homepage.all-events', ['filter' => 'completed']) }}">Selesai</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -154,16 +98,54 @@
                 @endforeach
             </div>
 
-            @if(count($events) > 0)
-                <div class="text-center mt-5">
-                    <a href="{{ route('homepage.all-events') }}"
-                        class="button-hover btn bg-primary-dark py-3 px-5 text-white fw-bold fs-5">
-                        Lihat Semua Event
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0742 12L14.0742 18M20.0742 12L14.0742 6M20.0742 12H9.57416M4.07416 12H6.57416"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
+            @if($events->count() === 0)
+                <div class="text-center py-5">
+                    <h3 class="text-muted">Belum ada event yang tersedia</h3>
+                    <p class="text-muted">Silakan kembali lagi nanti untuk melihat event-event terbaru</p>
+                </div>
+            @endif
+
+            <!-- Pagination -->
+            @if($events->hasPages())
+                <div class="d-flex justify-content-center mt-5">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            {{-- Previous Page Link --}}
+                            @if($events->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">&laquo;</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $events->previousPageUrl() }}" rel="prev">&laquo;</a>
+                                </li>
+                            @endif
+
+                            {{-- Pagination Elements --}}
+                            @foreach($events->getUrlRange(1, $events->lastPage()) as $page => $url)
+                                @if($page == $events->currentPage())
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ $page }}</span>
+                                    </li>
+                                @else
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                    </li>
+                                @endif
+                            @endforeach
+
+                            {{-- Next Page Link --}}
+                            @if($events->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $events->nextPageUrl() }}" rel="next">&raquo;</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">&raquo;</span>
+                                </li>
+                            @endif
+                        </ul>
+                    </nav>
                 </div>
             @endif
         </div>

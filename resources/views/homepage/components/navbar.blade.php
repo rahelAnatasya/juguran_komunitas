@@ -7,7 +7,7 @@
     </a>
 
     <div class="row w-100 mx-auto d-none d-lg-flex">
-      <div
+      <!-- <div
         class="mx-4 col col-lg-auto overflow-hidden px-1 d-flex mx-lg-auto flex-grow-1 flex-lg-grow-0 align-items-center border border-3 rounded-4"
         style="height: fit-content; width: 300px;">
         <input style="outline: 0;" class="border-0 px-3 py-2 w-100 fs-6" type="text" placeholder="Search" />
@@ -15,7 +15,7 @@
           style="height: 42px; width: 42px">
           <img class="h-100 py-1" src="{{ asset('assets/images/icon/search.svg') }}" />
         </button>
-      </div>
+      </div> -->
     </div>
 
     <button class="navbar-toggler border-0" type="button" style="box-shadow: none" data-bs-toggle="offcanvas"
@@ -37,7 +37,7 @@
               id="beranda-nav-link">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link color-primary fw-semibold" href="/#event" id="event-nav-link">Event</a>
+            <a class="nav-link color-primary fw-semibold" href="/allevents" id="event-nav-link">Event</a>
           </li>
           @auth
             <li class="nav-item">
@@ -69,11 +69,12 @@
 
       berandaNavLink.classList.remove('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
       eventNavLink.classList.remove('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
+      console.log(currentPath);
 
-      if (currentPath === '/') {
-        if (hash === '#event') {
+      if (currentPath === '/' || currentPath === '/allevents') {
+        if (hash === '#event' || currentPath === '/allevents' || currentPath === '/allevents/search') {
           eventNavLink.classList.add('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
-        } else {
+        } else if (currentPath === '/') {
           berandaNavLink.classList.add('border-bottom', 'mx-auto', 'border-3', 'color-primary-dark');
         }
       }

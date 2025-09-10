@@ -13,9 +13,49 @@
   </style>
 
   <div class="container">
-    <div data-aos="fade-up" data-aos-duration="800">
-      <h2 class="fw-bold">Acara Seru yang Akan Datang</h2>
-      <p>Ikuti acara menarik yang akan datang dan dapatkan pengalaman baru</p>
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6">
+        <div data-aos="fade-up" data-aos-duration="800">
+          <h2 class="fw-bold">
+            {{ $title }}
+          </h2>
+          <p>Ikuti acara menarik yang akan datang dan dapatkan pengalaman baru</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex gap-2 mb-3">
+          <a href="{{ route('event', ['filter' => 'all']) }}" 
+             class="btn {{ $currentFilter === 'all' ? 'btn-primary' : 'btn-outline-primary' }}">
+            Semua
+          </a>
+          <a href="{{ route('event', ['filter' => 'upcoming']) }}" 
+             class="btn {{ $currentFilter === 'upcoming' ? 'btn-warning' : 'btn-outline-warning' }}">
+            Akan Datang
+          </a>
+          <a href="{{ route('event', ['filter' => 'ongoing']) }}" 
+             class="btn {{ $currentFilter === 'ongoing' ? 'btn-success' : 'btn-outline-success' }}">
+            Sedang Berlangsung
+          </a>
+          <a href="{{ route('event', ['filter' => 'completed']) }}" 
+             class="btn {{ $currentFilter === 'completed' ? 'btn-secondary' : 'btn-outline-secondary' }}">
+            Selesai
+          </a>
+        </div>
+        <form action="{{ route('event.search') }}" method="GET" class="d-flex">
+          <input type="hidden" name="filter" value="{{ $currentFilter }}">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Cari acara..." value="{{ $searchQuery ?? '' }}">
+            <button class="btn btn-primary" type="submit">
+              <i class="bx bx-search"></i>
+            </button>
+            @if(isset($searchQuery) and !empty($searchQuery))
+              <a href="{{ route('event', ['filter' => $currentFilter]) }}" class="btn btn-outline-secondary">
+                <i class="bx bx-x"></i>
+              </a>
+            @endif
+          </div>
+        </form>
+      </div>
     </div>
 
     <div class="row g-3">

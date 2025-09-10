@@ -10,10 +10,12 @@
                 </div>
 
                 <!-- App Search-->
-                <form class="app-search d-none d-md-block me-auto">
+                <form class="app-search d-none d-md-block me-auto" action="{{ route('event.search') }}" method="GET">
                     <div class="position-relative">
-                        <input type="search" class="form-control" placeholder="Search..." autocomplete="off" value="" />
-                        <iconify-icon icon="iconamoon:search-duotone" class="search-widget-icon"></iconify-icon>
+                        <button type="submit" class="border-0 bg-transparent position-absolute top-50 translate-middle-y me-2">
+                            <iconify-icon icon="iconamoon:search-duotone" class="search-widget-icon"></iconify-icon>
+                        </button>
+                        <input type="search" name="q" class="form-control" placeholder="Search..." autocomplete="off" value="{{ request('q', '') }}" />
                     </div>
                 </form>
             </div>
